@@ -1,0 +1,37 @@
+Ein bekanntes Verfahren sind Einmalpasswörter (meist sechsstellige Zahlen), die nach 
+Eingabe von Nutzername und Passwort per SMS an das Smartphone des Nutzers gesendet 
+werden. Auch die Übertragung des Einmalpassworts per E-Mail ist üblich, soll hier 
+aber nicht näher betrachtet werden. Bzgl. der Nutzerfreundlichkeit teilen SMS und 
+E-Mail sich einige Eigenschaften. Der Nutzer liest den empfangenen Code ab und gibt 
+ihn dann auf der Login-Seite ein. Nach der Verwendung verliert das Einmalpasswort 
+seine Gültigkeit. Diese sollte im Idealfall nur für wenige Minuten gültig sein.
+\\\\
+Die Methode wird oft genutzt und hat wie die anderen smartphone-basierten Verfahren 
+den Vorteil, dass kein extra Gegenstand benötigt wird. Jedoch hat das SMS-Verfahren 
+ähnliche Kritikpunkte wie die generierten Codes. Auch hier muss der Code abgelesen 
+und eingetippt werden, wobei Zeichen fehlerhaft übernommen werden könnten. Außerdem 
+ist auch hier der Verlust des Geräts ein Problem. Dafür könnte man die vorab 
+generierten Codes als Backup-Lösung nutzen, sofern der Dienst dies unterstützt. Aber 
+auch dies öffnet, wie bereits erwähnt, Angriffsmöglichkeiten.
+\\\\
+Ein weiteres Problem ist das SIM-Swapping. Hierbei kontaktiert der Angreifer den 
+Kundenservice des Mobilfunkanbieters des Nutzers. Mit einem plausiblen Grund (z.B. 
+Verlust des Smartphones) gelingt es dem Angreifer, den Mobilfunk-Account des Nutzers 
+einer neuen SIM-Karte zuzuweisen, die ihm der Mobilfunkanbieter dann zusendet. Von 
+nun an empfängt der Angreifer die SMS-Nachrichten, die eigentlich an den Nutzer 
+gerichtet sind. \autocite[51 \psq]{Jover}
+\\\\
+Jovers Zusammenfassung zufolge gibt es in den Netzwerken des Global System for 
+Mobile Communications (GSM) sowie Long-term Evolution (LTE) Schwachstellen, die es 
+dem Angreifer ebenfalls ermöglichen, den SMS-Verkehr des Nutzers auf das Gerät des 
+Angreifers umzuleiten. Voraussetzung sei, dass der Angreifer Zugriff auf einen 
+Entry-Point des \glqq Signaling System 7\grqq{}-Netzwerks benötigt. \autocite[51]{Jover}
+\\\\
+Auch der später in Kap. \ref{sec: phishing} (S. \pageref{sec: phishing}) beschriebene Phishing-Angriff ist eine Schwachstelle des 
+SMS-Verfahrens (gilt auch für die E-Mail-Variante). Aufgrund dieser sicherheitstechnischen Schwachstellen des SMS wurde das smsTAN-Verfahren in der EU abgeschafft \autocite{BSIsmsTan}.
+\\\\
+Nach der Studie von \textcite{Reese} wurde die SMS-Methode bei der Authentisierung 
+mit einer SUS-Punktzahl von 75 (Median und arithmetischer Mittelwert) bewertet. Somit ist sie zusammen mit der U2F-Methode die am schlechtesten 
+bewertete von den fünf untersuchten Methoden. Bzgl. der Zeitmessung sind es $16{,}6~s$ 
+beim Median, wobei SMS mit den generierten Codes am langsamsten wäre. Im arithmetischen Mittel sind es $18{,}5~s$, womit SMS nahe dem Mittelwert der 
+Push-Methode ($16{,}1~s$) kommt und eher zu den schnelleren Methoden zählen würde.

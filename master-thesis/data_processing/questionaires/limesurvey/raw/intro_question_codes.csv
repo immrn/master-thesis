@@ -1,0 +1,41 @@
+code,meaning
+EXTENSION,Haben Sie schon einmal eine Browser Extension aktiv genutzt?
+COUNTDIENSTE,Bei ungefähr wie vielen Diensten nutzen Sie das Verfahren der zeitbasierten Einmalpasswörter (TOTP)
+COUNTUSESPERWEEK,Wie oft nutzen Sie das Verfahren ungefähr im Durchschnitt?
+SUS[SQ001],Ich kann mir sehr gut vorstellen das System regelmäßig zu nutzen.
+SUS[SQ002],Ich empfinde das System als unnötig komplex.
+SUS[SQ003],Ich empfinde das System als einfach zu nutzen.
+SUS[SQ004],Ich glaube ich würde die Hilfe einer technisch versierten Person benötigen um das System benutzen zu können.
+SUS[SQ005],Ich finde dass die verschiedenen Funktionen des Systems gut integriert sind.
+SUS[SQ006],Ich finde dass es im System zu viele Inkonsistenzen gibt.
+SUS[SQ007],Ich kann mir vorstellen dass die meisten Leute das System schnell zu beherrschen lernen.
+SUS[SQ008],Ich empfinde es sehr umständlich das System zu nutzen.
+SUS[SQ009],Ich habe mich bei der Nutzung des Systems sehr zuversichtlich gefühlt.
+SUS[SQ010],Ich musste eine Menge Dinge lernen bevor ich mit dem System arbeiten konnte.
+SUS11[SQ001],Insgesamt bewerte ich die Nutzerfreundlichkeit des Systems als
+UEQ[SQ010],unerfreulich | erfreulich
+UEQ[SQ011],unverständlich | verständlich
+UEQ[SQ012],kreativ | phantasielos
+UEQ[SQ013],leicht zu lernen | schwer zu lernen
+UEQ[SQ014],wertvoll | minderwertig
+UEQ[SQ015],langweilig | spannend
+UEQ[SQ016],uninteressant | interessant
+UEQ[SQ017],unberechenbar | voraussagbar
+UEQ[SQ018],schnell | langsam
+UEQ[SQ019],originell | konventionell
+UEQ[SQ020],behindernd | unterstützend
+UEQ[SQ021],gut | schlecht
+UEQ[SQ022],kompliziert | einfach
+UEQ[SQ023],abstoßend | anziehend
+UEQ[SQ024],herkömmlich | neuartig
+UEQ[SQ025],unangenehm | angenehm
+UEQ[SQ026],sicher | unsicher
+UEQ[SQ027],aktivierend | einschläfernd
+UEQ[SQ028],erwartungskonform | nicht erwartungskonform
+UEQ[SQ029],ineffizient | effizient
+UEQ[SQ030],übersichtlich | verwirrend
+UEQ[SQ031],unpragmatisch | pragmatisch
+UEQ[SQ032],aufgeräumt | überladen
+UEQ[SQ033],attraktiv | unattraktiv
+UEQ[SQ034],sympathisch | unsympathisch
+UEQ[SQ035],konservativ | innovativ

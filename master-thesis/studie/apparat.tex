@@ -1,0 +1,72 @@
+Jeder Proband benötigt für die Studie einen Bluetooth-fähigen Computer und ein 
+Bluetooth-fähiges Android-Smartphone. Idealerweise sollten die Geräte Eigentum der 
+Probanden sein, da man für gewöhnlich am besten mit seinen eigenen Geräten und 
+deren Konfigurationen zurechtkommt. Zur Einführung und zur selbstständigen 
+Nutzungsphase benötigen die Probanden einen Internetzugang, um den Webdienst 
+aufzurufen. Um die nötigen Softwarekomponenten zu installieren, sollten sie 
+Administratorrechte besitzen. Die Softwarekomponenten setzen sich zusammen aus 
+der Smartphone-App (Speichern und Übertragen der TOTPs) sowie der Browser 
+Extension (für Chrome) und einer Hintergrundanwendung (zum Empfangen und 
+automatischen Eintragen des TOTPs). Details sind in Kap. \ref{sec: implementierung} zu finden.
+\\\\
+Ein weiterer Bestandteil des Experiments ist der Webdienst, der zuverlässig und 
+jederzeit erreichbar sein sollte. Hier werden unter anderem die Anmeldedaten und 
+Logging-Daten der Probanden gespeichert. Mithilfe der Zeitstempel in den 
+Logging-Daten wird die Dauer jeder Authentisierung gemessen. Der Webdienst 
+unterstützt die Anmeldung mit Benutzername und Passwort und verlangt nach dem 
+ersten Login die Einrichtung der 2FA mit zeitbasierten Einmalpasswörtern. Dieser 
+Einrichtungsprozess ist so aufgebaut wie jeder Einrichtungsprozess von TOTPs: 
+QR-Code anzeigen, kurze Anweisungen, was der Nutzer tun muss, und ein Eingabefeld 
+für das initale TOTP. Der Webdienst selbst bietet dem Probanden die Möglichkeit, 
+eine fiktive Aufgabe zu erledigen, die bestenfalls einen sicherheitskritischen 
+Kontext wie Finanzen hat, damit der Proband die 2FA zumindest in der Fiktion als 
+sinnvoll erachtet.
+\\\\
+Darüber hinaus werden Materialien wie die standardisierten Fragebögen User 
+Experience Questionnaire (UEQ) \autocite{Schrepp} und System Usability Scale (SUS)
+\autocite{Brooke} benötigt. Beide Fragebögen werden insgesamt dreimal benötigt: 
+nach der Einrichtung des neuen Verfahrens und zu Beginn der 
+Abschlussveranstaltung für das neue sowie das gewöhnliche Verfahren.
+\\\\
+Zudem wurden den Probanden Fragen in einem Interview gestellt: einmal nach der 
+Einrichtung des neuen Verfahrens und in der Abschlussveranstaltung. Der 
+Fragenkatalog ist im Anhang \ref{anh: interview einrichtung} und \ref{anh: interview authentisierung} einzusehen. 
+
+\subsection{Entscheidung für SUS und UEQ}
+Es existieren verschiedene standardisierte Fragebögen, um zu ermitteln, wie 
+Nutzer ihre Erfahrung mit einem System bewerten und inwiefern sie es als 
+nutzerfreundlich erachten. Folgend wird begründet, wieso sich für UEQ und SUS entschieden wurde. 
+\\\\
+Ein sehr bekannter Fragebogen zur Nutzerfreundlichkeit / Benutzbarkeit ist die 
+System Usability Scale (SUS) \autocite{Brooke}. Sie besteht aus 10 
+standardisierten Aussagen über das verwendete System. Wobei ein Teilnehmer mit 
+Hilfe einer 5-stufigen Skala zu jeder Aussage seine Zustimmung oder seinen 
+Widerspruch äußert. Aus den Antworten wird eine Punktzahl berechnet, die dann 
+eine Aussage über die Nutzerfreundlichkeit eines Systems treffen soll. Das 
+Ergebnis liegt immer in einem Bereich von 0 bis einschließlich 100 Punkte, wobei 
+100 Punkte für die bestmögliche und 0 Punkte für die schlechtestmögliche 
+Nutzerfreundlichkeit stehen. Als durchschnittliche Bewertung werden 68 Punkte 
+angesehen und die prozentuale Wertigkeit der Punkte verläuft nicht linear, sondern als 
+S-Kurve \autocites{Sauro}[zitiert nach][]{BrookeRetro}. Die SUS eignet sich, um zwischen verschiedenen 
+Systemen zu vergleichen, da ihre zu bewertenden Aussagen allgemein verfasst sind.
+Prinzipiell kann der Vergleich zu den Studienergebnissen von Reese et al. \autocite{Reese} angestellt werden. Am Ende des SUS-Fragebogens wird eine 11. Frage gestellt, die separat ausgewertet wird. Hier geben die Probanden auf einer $7$-stufigen Skala an, wie nutzerfreundlich sie das System insgesamt bewerten \autocite{SUS11}. Die Stufen werden mit Aussagen wie \glqq Das Schlechteste, was man sich vorstellen kann\grqq{} über \glqq Ok\grqq{} bis hin zu \glqq Das Beste, was man sich vorstellen kann\grqq{} versehen. Diese Aussagen werden entsprechend der Erkenntnisse von \textcite{SUS11} einer SUS-Punktzahl zugeordnet. Mithilfe dieser Ergebnisse wird verglichen, ob die tatsächlichen SUS-Berwertungen der empfundenen Nutzerfreundlichkeit annährend entsprechen.
+\\\\
+Des Weiteren wird der User Experience Questionnaire (UEQ) Fragebogen genutzt. Er 
+dient dazu, ein System bzgl. der Nutzerfreundlichkeit und 
+Nutzererfahrung zu bewerten. Der UEQ besteht aus 26 Begriffspaaren, wobei sich 
+jedes Paar aus jeweils zwei gegensätzlichen Adjektiven zusammensetzt. Mit einer 
+7-stufigen Skala muss der Proband für jedes Begriffspaar seine Zustimmung zu 
+einem der Begriffe in Bezug auf das System äußern. Setzt er ein Kreuz in der 
+Mitte der Skala, stimmt er für beide Begriffe gleichermaßen. Diese 26 Paare 
+werden unterteilt in sechs Skalen \autocite[2]{Schrepp}:
+\begin{itemize}
+    \item Attraktivität: Gesamteindruck über das System, mögen Nutzer das System oder nicht?
+    \item Durchschaubarkeit: Gewöhnt man sich leicht an das System, ist es leicht zu erlernen?
+    \item Effizienz: Kann die Aufgabe ohne unnötigen Aufwand gelöst werden?
+    \item Steuerbarkeit: Beherrscht der Nutzer das System?
+    \item Stimulation: Ist die Nutzung des Systems spannend und motivierend?
+    \item Originalität: Ist das System innovativ und kreativ? Weckt es das Interesse?
+\end{itemize}
+Somit wird analysiert, ob in einer Skala Stärken oder Defizite vorliegen. Dies kann 
+man sowohl für ein einzelnes System (hier die Einrichtung von Blue TOTP) als auch zum Vergleich 
+zweier Systeme nutzen (hier das traditionelle TOTP-Verfahren gegenüber Blue TOTP).

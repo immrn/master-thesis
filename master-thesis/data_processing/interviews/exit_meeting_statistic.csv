@@ -1,0 +1,11 @@
+id,percept_blue_totp_faster,percept_blue_totp_more_usable,benefit_effort,used_background_process_of_app,bt_status_pc,bt_status_pc_in_study,bt_status_phone,bt_status_phone_in_study,prefer
+6,bit slower,equal,benefit,False,always on,always on,on while used,on while used,equal
+1,faster,not specified,benefit,False,always on,always on,on while used,on while used,blue totp
+2,faster,more usable,benefit,False,on while used,on while used,on while used,on while used,blue totp
+4,faster,more usable,benefit,False,on while used,always on,on while used,on while used,blue totp
+3,equal,equal,effort,True,always on,always on,on while used,on while used,basic
+5,faster,not specified,benefit,True,always on,always on,on while used,always on,blue totp
+7,slower,not specified,benefit,True,always on,always on,on while used,on while used,equal
+8,equal,more usable,benefit,True,always on,always on,always on,always on,blue totp
+10,faster,more usable,benefit,False,on while used,always on,on while used,on while used,blue totp
+11,faster,more usable,benefit,False,always on,always on,on while used,on while used,blue totp

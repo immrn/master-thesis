@@ -1,0 +1,39 @@
+Die Studie findet in Einzelsitzungen statt und beginnt mit einer Einführung zur 
+Einrichtung des neuen Verfahrens. Am Folgetag beginnt die 6-tägige 
+Nutzungsphase, in der die Probanden sich täglich bei einem Webdienst anmelden 
+und mit dem neuen Verfahren als zweiten Faktor authentisieren. Auf der Website 
+selbst schließen sie eine kleine Aufgabe ab, um dem gesamten Prozess eine Bedeutung zu vermitteln, anstatt sich grundlos irgendwo anzumelden. Am Ende der Nutzungsphase nehmen sie am abschließenden Meeting teil, 
+um ihre Erfahrungen und Ansichten zu teilen.
+\\\\
+Der Fokus der Studie liegt auf der grundlegenden Untersuchung des Prototyps. Für den Vergleich zwischen Prototyp und traditionellen TOTP werden in der Abschlussveranstaltung die Fragebögen SUS bzw. UEQ genutzt. Hier kann man das zu bewertende System (Prototyp oder traditionelles TOTP) als unabhängige Variable sehen. Einmal bewerten die Probanden die Authentisierung bzgl. des traditionellen TOTP-Verfahrens und einmal bzgl. Blue TOTP.
+\\\\
+Die abhängigen Variablen sind folgende:
+\begin{itemize}
+    \item [(i)] Benötigte Zeit zur Einrichtung des neuen Verfahrens
+    \item [(ii)] Nutzerfreundlichkeit, bemessen anhand der Fragebögen System Usability Scale (SUS) und User Experience Questionnaire (UEQ) für die Einrichtung des neuen Verfahrens
+    \item [(iii)] Benötigte Zeit für die Authentisierung mit dem neuen Verfahren beim Webdienst pro Tag
+    \item [(iv)] Nutzerfreundlichkeit, bemessen anhand der Fragebögen SUS und UEQ für die Authentisierung mit dem neuen Verfahren beim Webdienst
+    \item [(v)] Nutzerfreundlichkeit, bemessen anhand der Fragebögen SUS und UEQ für die Authentisierung mit dem gewöhnlichen Verfahren beruhend auf der Erfahrung des Probanden
+\end{itemize}
+Variable (i) wird in der Einführungsveranstaltung per Stoppuhr gemessen und 
+beginnt, sobald sich der Proband erstmals beim Webdienst angemeldet hat und 
+direkt zur Einrichtung der Zwei-Faktor-Authentisierung (2FA) gezwungen wird. Das 
+heißt, er sieht den zu scannenden QR-Code und das Eingabeelement für das initiale 
+TOTP. 
+Die Messung wird gestoppt, sobald der Proband das initiale TOTP beim Webdienst eingegeben hat. Den Teilnehmern 
+wird nicht kommuniziert, dass ihre Zeit gemessen wird, damit sie möglichst 
+natürlich und ohne Druck agieren.
+\\\\
+Variable (ii) sind die Ergebnisse aus den Fragebögen SUS und UEQ. 
+\\\\
+Variable (iii) bezieht sich auf die 6-tägige Nutzungsphase und wird vom 
+Webserver gemessen. Die Messung beginnt, sobald der Proband beim Webdienst den 
+Benutzernamen und das Passwort eingegeben hat und nun das TOTP eingeben muss. 
+Wenn der Webdienst das TOTP erhalten hat, wird die Messung gestoppt. Werte von 
+fehlgeschlagenen Authentisierungen werden nicht berücksichtigt. Den Teilnehmern 
+wird nicht kommuniziert, dass ihre Zeiten gemessen werden, damit sie wie bei der 
+Einrichtung möglichst natürlich und ohne Druck agieren.
+\\\\
+Die Variablen (iv) und (v) sind die Ergebnisse aus den Fragebögen SUS und UEQ 
+jeweils für das neue und das gewöhnliche Verfahren. Sie werden direkt zu Beginn 
+der Abschlussveranstaltung dem Probanden vorgelegt.

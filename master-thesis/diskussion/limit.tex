@@ -1,0 +1,29 @@
+Die Studie fokussiert sich weniger darauf, die Hypothesen mithilfe 
+statistischer Signifikanz zu bestätigen oder zu falsifizieren. Mit einer 
+kleinen Stichprobenmenge von 11 (Einrichtung) bzw. 10 (Authentisierung) 
+Probanden ist es in diesem Kontext zu erwarten, keine statistische 
+Signifikanz zu erreichen. Der Fokus liegt eher darauf, ob potentiell eine 
+Tendenz bzgl. der Hypothesen zu erkennen ist und welche Stärken und 
+Schwachstellen Blue TOTP aufweist und mit welchen Schritten man es verbessern 
+kann.
+\\\\
+Bei der Einrichtung kam es bei zwei Teilnehmern vor, dass das initiale TOTP 
+nicht von der App angezeigt wurde. Auch traten Bugs bei der Authentisierung 
+auf, bei denen die Teilnehmer das System trotzdem noch nutzen konnten und nur 
+ihr Nutzererlebnis etwas negativ beeinflusst wurde. Selbstverständlich sollte 
+mehr Zeit in Testing investiert werden, um Bugs auszuschließen. Dennoch 
+sollten die wenigen Bugs, die aufgetreten sind, das Ergebnis nicht so sehr 
+beeinflusst haben, da die Probanden dahingehend verständnisvoll wirkten.
+\\\\
+Dadurch, dass die Fallback-Option den Probanden zur Verfügung stand, haben sie 
+diese teilweise genutzt und somit hauptsächlich die Zeitmessungen verfälscht. 
+Der Vorteil ist, dass man mit viel Sicherheit annehmen kann, dass die 
+Fallback-Verwendungen die Authentisierungszeiten bzgl. des Medians und 
+Mittelwerts positiv verzerrt haben, also den Median bzw. Mittelwert größer 
+erscheinen lassen, als eigentlich ist. D.h. der Median und Mittelwert 
+fungieren eher als eine obere Grenze für den tatsächlichen Wert. Umgekehrt 
+wäre schlechter für die Studie: also die Mittelwerte wären in Wahrheit größer, 
+weil der Fallback i.d.R. kürzer dauert als der Weg mit der 
+Bluetooth-Funktionalität.
+\\\\
+Der Fakt, dass Probanden nicht innerhalb der Studie das traditionelle TOTP-Verfahren verwendet haben, wurde bereits im vorangegangenen Unterkapitel diskutiert.

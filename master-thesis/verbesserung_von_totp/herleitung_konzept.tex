@@ -1,0 +1,116 @@
+Im folgenden Abschnitt werden Probleme des TOTP-Verfahrens und Ideen zu deren 
+Lösung vorgestellt. Diese Lösungen vereinen sich in einem Konzept zur 
+Verbesserung von TOTPs.
+
+\paragraph*{TOTP-App als Grundlage}
+\mbox{} \vspace{0.1cm} \\
+Zunächst stellt sich die Frage, wieso das TOTP-Verfahren und insbesondere die 
+TOTP-Apps für Erweiterungen geeignet sind. Zuerst sei genannt, dass das 
+Smartphone als der zweite Faktor fungiert. D.h. man benötigt keinen neuen 
+Gegenstand wie einen Security-Key für die 2FA. Diese TOTP-Apps sind unabhängig 
+von den Diensten, bei denen sich ein Nutzer authentisieren möchte. Ein Dienst muss nur das TOTP-Verfahren unterstützen, ansonsten hat er 
+keinen Einfluss auf die App. Somit kann der Nutzer seine 2FA-Vorgänge mithilfe 
+einer App erledigen, anstatt für jeden Dienst eine eigene App zu nutzen. Das ist 
+nämlich der Fall beim Push-Verfahren. Wobei es auch Push-Verfahren wie Authy One 
+Touch gibt, bei denen eine App für mehrere Dienste genutzt werden kann. 
+Andererseits benötigt man mit den TOTP-Apps keinen Mobilfunkempfang oder 
+Internetzugang, da das Einmalpasswort von der App selbst berechnet wird.  
+Betrachtet man nun die Probleme des 
+TOTP-Verfahrens, lassen sich diese mit einigen Erweiterungen lösen.
+
+\paragraph*{Ablesen und Eintippen des TOTPs}
+\mbox{} \vspace{0.1cm} \\
+Ein wesentliches Problem ist das Ablesen und Eintippen des 
+Einmalpassworts. Die App generiert das TOTP und der Nutzer muss es bei jedem 
+Authentisierungsvorgang in die Website eingeben. Zum einen ist das 
+zeitintensiv und unbequem \autocite{Reese}, zum anderen lenkt es auch von der Aufgabe ab, die der 
+Nutzer eigentlich erledigen möchte. Dazu kommt, dass potentiell die Ziffern des 
+Einmalpasswort falsch abgelesen bzw. falsche Ziffern eingegeben werden.
+
+\paragraph*{Automatische Übertragung des TOTPs}
+\mbox{} \vspace{0.1cm} \\
+Es ist fraglich, wieso der Nutzer überhaupt das TOTP übertragen soll. 
+Stattdessen kann die App das TOTP an den Browser senden und dieser schreibt es 
+automatisch in das Eingabefeld. Also benötigt man eine geeignete Technologie zur 
+Datenübertragung, die von den meisten Smartphones und Computern unterstützt wird 
+oder leicht nachzurüsten ist. Infrage kommen dabei NFC, Bluetooth und prinzipiell 
+auch der Weg über einen Server im Internet. QR-Codes sind unpassend, da sie nur 
+unidirektional kommunizieren und der Nutzer aktiv werden muss. NFC ist zwar in 
+den meisten modernen Smartphones integriert, aber wird nicht von jedem Laptop und 
+noch seltener von Desktop-PCs unterstützt. Man kann NFC-Chips in 
+Form von USB-Geräten an den PC anschließen. Allerdings sind sie für den mobilen 
+Gebrauch eher unhandlich. Der Weg, das TOTP über einen Server zu übertragen, 
+würde wieder einen Internetzugang erfordern und, wie später noch ausgeführt wird, 
+die Angriffsfläche für MFA-Fatigue öffnen. Bluetooth dagegen wird von den meisten 
+modernen Smartphones und Laptops unterstützt. Gegebenenfalls kann es auch mit kleinen 
+erschwinglichen USB-Geräten nachgerüstet werden. Zudem sendet Bluetooth je nach 
+Konfiguration und Bedingungen über Reichweiten von wenigen Metern bis hin zu 
+mehreren Hundert Metern \autocite{btEstimator}, während NFC nur mit Reichweiten von bis zu $2~cm$ \autocite{nfcForum} 
+agiert. Bluetooth ist auch bereits in den Browsern Chrome, Edge und Opera 
+integriert und nennt sich Web Bluetooth \autocite{webBt}. Daher fällt die 
+Entscheidung auf Bluetooth als Funktechnologie.
+
+\paragraph*{Nutzer als letzte Sicherheitsinstanz}
+\mbox{} \vspace{0.1cm} \\
+Einerseits sollte das Einmalpasswort nicht ohne eine Interaktion des Nutzers an 
+den Browser gesendet werden. Denn auch wenn die Verbindung zwischen der App und 
+dem Browser sicher ist, könnte jemand mit Zugang zum Computer des Nutzers 
+versuchen, sich bei einem Dienst anzumelden, während der Nutzer dies nicht 
+bemerkt. Andererseits ist es sogar die Überlegung wert, doch ohne jegliche 
+Nutzerinteraktion das TOTP an Browser zu senden. Voraussetzung wäre natürlich, 
+dass die Verbindung zwischen App und Browser Ende-zu-Ende verschlüsselt, 
+authentisiert und resistent gegen jegliche kompromittierende Angriffe ist, wie 
+bspw. Replay-Attacken oder Man-In-The-Middle-Attacken beim Schlüsselaustausch. 
+Ist das gegeben, könnte theoretisch nur der Computer bzw. Browser das TOTP vom 
+Smartphone verlangen. Andererseits könnte es ein Risiko sein, wenn der Computer 
+bzw. der Browser mit Malware infiziert ist. D.h. es bedarf einer Abwägung aus Sicherheit und Komfort: soll die App einfach TOTPs an einen vertrauten Browser senden dürfen oder soll der Nutzer jedes TOTP freigeben, bevor die App es an den Browser sendet.
+
+\paragraph*{Transformation zum Push-Verfahren}
+\mbox{} \vspace{0.1cm} \\
+Ein weiteres Problem bei den gewöhnlichen TOTP-Apps ist, dass der Nutzer die App 
+erst suchen, öffnen und den entsprechenden Account aus einer Liste wählen muss, 
+um an das Einmalpasswort zu gelangen. Das kann behoben werden, indem man die 
+TOTP-App mithilfe der Bluetooth-Funktionalität in eine App verwandelt, die aus 
+Sicht des Nutzers einer App mit Push-Verfahren gleicht. Sobald der Browser 
+erkennt, dass der Nutzer das TOTP eingeben muss, sendet er der App einen Befehl, 
+damit diese eine Benachrichtigung anzeigen kann. So kann der Nutzer auf die 
+Benachrichtigung tippen und muss nur noch zustimmen, dass das TOTP an den Browser 
+übertragen werden soll. Dadurch könnte das neue Konzept zusätzlich Zeit bei der 
+Authentisierung einsparen  (vergl. Abb. \ref{fig: reese zeiten} Push vs. 
+TOTP) und weniger Interaktionen vom Nutzer verlangen. Das Problem, das Push-Apps der MFA-Fatigue ausgesetzt sind, gilt hier nur noch für den lokalen Bereich, wenn der Angreifer in der Lage ist, das Smartphone des Nutzers per Bluetooth zu erreichen.
+
+\paragraph*{Schutz gegen Phishing}
+\mbox{} \vspace{0.1cm} \\
+Nachdem nun einige Ansätze zu einer verbesserten Nutzerfreundlichkeit und einem 
+geringeren Zeitaufwand vorgestellt wurden, muss auch das Problem des fehlenden 
+Schutzes vor Phishing (siehe Kap. \ref{sec: phishing}) gelöst werden. Prinzipiell 
+muss der Browser (nicht die Website) als vertrauenswürdige Partei angesehen 
+werden. Richtet der Nutzer dieses neue Verfahren bei einem Webdienst ein, dann 
+soll der Browser den Benutzernamen und die Domain der Website an die 
+Smartphone-App senden. Den Benutzernamen ermittelt der Browser, wenn sich der 
+Nutzer beim Webdienst anmeldet. Die App erhält bei der Einrichtung das Geheimnis, 
+indem sie den QR-Code auf der Website scannt. Die App speichert den Benutzernamen 
+und die Domain zusammen mit dem Geheimnis. Meldet sich der Nutzer nach der 
+Einrichtung an, empfängt die App vom Browser die Domain der Website und den 
+Benutzernamen. Die App prüft, ob sie diese Domain bereits kennt. Ist dies der 
+Fall, zeigt die App dem Nutzer die Benachrichtigung an und sendet bei dessen 
+Zustimmung das entsprechende TOTP an den Browser. Kennt die App die Domain nicht, 
+dann sollte sie den Nutzer warnen, dass er sich auf einer Phishing-Website 
+befindet.
+
+\paragraph*{Kein Zeitdruck und unnötiges Warten}
+\mbox{} \vspace{0.1cm} \\
+Zuletzt seien noch zwei zeitkritische Probleme von Interesse. Generell entfernt 
+das neue Konzept den wahrnehmbaren Zeitdruck. Der Nutzer muss das TOTP nicht mehr 
+abtippen und sieht auch keinen Countdown mehr, der eventuell Stress auslösen 
+kann. Außerdem entfällt das Problem, dass der Nutzer warten muss, wenn das TOTP 
+nur noch wenige Sekunden gültig ist (z.B. 5s). In diesem Fall wartet der Nutzer oft 
+auf das nächste Einmalpasswort, weil er es in der verbleibenden Zeit nicht in den 
+Browser übertragen könnte. Man könnte vermuten, dass dieses Problem in anderer 
+Weise auch für das neue Konzept gilt. Zum Beispiel könnte die App das 
+Einmalpasswort genau dann senden, wenn es nur noch 1s gültig ist. Dann wird es 
+zwar automatisch in die Website eingegeben, aber falls die Übertragung und die 
+Bestätigung der Eingabe mehr als $1~s$ dauern, wäre das Einmalpasswort nicht mehr 
+gültig. Aber der RFC 6238 empfiehlt, dass der Webdienst das TOTP des aktuellen 
+30s-Zeitfensters sowie das TOTP im Zeitfenster davor und danach akzeptiert. Also 
+ist das Einmalpasswort aus dem eben genannten Beispiel noch ca. $30~s$ gültig.

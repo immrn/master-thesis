@@ -1,0 +1,64 @@
+Passkeys bauen auf den FIDO-Standards auf. Genau genommen basiert es 
+auf dem FIDO2-Projekt \autocite{PkFIDO}. Das Ziel ist es, nicht mehr 
+auf Passwörter und Benutzernamen sowie 2FA zu setzen, sondern auf eine 
+passwortlose Authentisierungsmethode, die angenehmer, schneller und 
+sicherer als Passwörter (und 2FA) sind. Passkeys sind 
+Phishing-resistent.
+\\\\
+Das FIDO2-Projekt ähnelt in seinen Grundzügen dem beschriebenen 
+U2F-Standard. Es hat allerdings das Ziel, die Identität eines Nutzers 
+nicht anhand seines Benutzernamen und Passworts sowie ggf. einem 
+zweiten Faktor zu bestimmen, sondern anhand von asymmetrischer 
+Kryptographie. D.h. der Nutzer benötigt dann bei der Anmeldung nur noch 
+einen privaten kryptographischen Schlüssel und der Dienst kann dessen 
+Anmeldung mit dem zugehörigen öffentlichen Schlüssel verifizieren. 
+Dabei kommen die zwei Protokolle WebAuthn \autocite{WebAuthnSpec} und 
+CTAP2 \autocite{CTAPSpec} zum Einsatz. WebAuthn legt die Kommunikation 
+zwischen Dienst (Website) und Client (Browser, Betriebsystem) fest. Der 
+Dienst sendet eine Challenge an den Client, dieser identifiziert die 
+Domain des Dienstes. Das CTAP2-Protkoll regelt, wie der Client die 
+Challenge und Domain an den Authenticator sendet, also das Gerät, auf 
+dem der private Schlüssel gespeichert ist. Der Authenticator kann dabei 
+ein Smartphone, ein Security Key (z.B. YubiKey) oder selbst das Gerät 
+des Clients sein (bspw. mit Windows Hello). Der private Schlüssel 
+sollte immer in einem Secure Element \autocite{BSISecEl} gespeichert 
+werden, einer eigenständigen physischen Komponente innerhalb des Geräts 
+(Authenticators) zur sicheren Verwahrung sensibler Daten. Nun 
+verifiziert der Authenticator die Domain und signiert die Challenge mit 
+seinem privaten Schlüssel. Anschließend sendet er die signierte 
+Challenge zurück an die Client-Instanz und diese leitet sie weiter an 
+den Dienst. Der entschlüsselt die Signatur mit seinem öffentlichen 
+Schlüssel und vergleicht sie mit der originalen Challenge. Nun ist der 
+Client authentifiziert. \autocite{YubiFIDO2}
+\\\\
+Passkeys Verfahren genau nach der eben beschriebenen Prozedur. 
+Allerdings war ein ursprünglicher Gedanke, dass der private Schlüssel 
+nie den Authenticator verlässt. Um die Nutzung von Passkeys so angenehm 
+wie möglich zu gestalten, wurde diese Beschränkung aufgehoben. Somit 
+können Passkeys auf mehreren Geräten über einen Drittanbieter (z.B. 
+Google) synchronisiert werden. D.h. der Nutzer muss nur auf einem Gerät 
+den Passkey einrichten und kann ihn auf seine anderen Geräte durch den 
+Drittanbieter übertragen lassen. So muss der Nutzer nicht für jedes 
+Gerät einen Passkey bei einem Dienst einrichten, sondern nur einen 
+Passkey für alle seine Geräte. Die Synchronisierung ist Ende-zu-Ende-verschlüsselt, also hat der Drittanbieter keine Einsicht auf die 
+privaten Schlüssel. Es sei angemerkt, dass der Nutzer meist auf dem 
+Authenticator eine Autorisierung zur Nutzung des privaten Schlüssels 
+durchführen muss, z.B. durch einen Scan des Gesichts oder des 
+Fingerabdrucks. D.h. nicht, dass die biometrischen Daten für die 
+eigentliche Authentisierung beim Online-Dienst genutzt werden. \autocite
+{PkFIDORes}
+\\\\
+Verwendet man ein Smartphone als Authenticator und möchte sich bei 
+einem Passkey-losen Gerät (Client) authentisieren, dann muss das 
+Smartphone über Bluetooth oder NFC mit dem Client (Browser, 
+Betriebssystem des Computers) kommunizieren. Bei der 
+Bluetooth-Verbindung vertraut man nicht auf die Sicherheitsmechanismen 
+von Bluetooth Low Energy, sondern sichert die Verbindung auf 
+Anwendungsebene \autocite{PkFIDORes}. Fraglich bleibt, wie man sich 
+bspw. auf einem fremden Computer (ohne Bluetooth, NFC und Kamera) bei 
+einem Dienst authentisiert, der bereits Passkeys voraussetzt, weil man 
+es bspw. schon mit seinem Smartphone eingerichtet hat. Da Passkeys 
+anscheinend eine gute Lösung des gesamten Passwort- und 
+2FA-Dilemmas sind, stellt sich die Frage, wieso wir unsere Passwörter 
+noch nicht durch Passkeys ersetzt haben (siehe \textcite{FidoRescue} und 
+\textcite{lassakaren}).

@@ -1,0 +1,56 @@
+Das vorgestellte Konzept zur Verbesserung von zeitbasierten Einmalpasswörtern 
+soll als aktuelle Implementierung umgesetzt werden. Während es wünschesnwert ist, dass Browser-Anbieter das Konzept als neuen Standard unterstützen, erfolgt die Überprüfung der Machbarkeit in Form eines Prototypen. 
+D.h. es soll eine Lösung geschaffen werden, die nicht erst in entfernter Zukunft 
+nutzbar ist, sondern jetzt.
+Anhand dieser Implementierung wird untersucht, ob die beschriebenen Änderungen am 
+gewöhnlichen \mbox{TOTP-Verfahren} einen Mehrwert für den Nutzer generieren. Es stellen sich somit die folgenden Forschungsfragen:
+\begin{itemize}
+    \item Wie kann eine eine solche gegenwärtige Implementierung mit einem Schutz gegen \\MITM-Phishing realisiert werden?
+    \item Welche Auswirkungen hat die Implementierung auf die Nutzererfahrung und die Nutzerfreundlichkeit?
+    \item Welche Auswirkungen hat die Implementierung auf die Task Completion Time?
+\end{itemize}
+Das Konzept und die zugehörige Implementierung zielen darauf ab, Schutz vor Phishing zu bieten. Allerdings wird dieser Aspekt weder technisch noch bzgl. der Nutzererfahrung weiter untersucht.
+\\\\
+Daraus werden folgende Hypothesen abgeleitet:
+\begin{itemize}
+    \item[(a)] Der Prototyp des neuen Verfahrens für zeitbasierte Einmalpasswörter ist nutzerfreundlicher als das gewöhnliche TOTP-Verfahren.
+    \item[(b)]  Der Prototyp des neuen Verfahrens für zeitbasierte Einmalpasswörter benötigt bzgl. der Authentisierungsvorgänge weniger Zeit als das gewöhnliche TOTP-Verfahren.
+\end{itemize}
+Um den Forschungsfragen nachzukommen, wurde eine Studie mit Probanden geplant. 
+Dazu muss das neue TOTP-Verfahren unterschieden werden in seine Einrichtung und 
+seine eigentliche Nutzung beim Login. Das heißt, es ist sinnvoll die Studie wie \textcite{Reese} in einen Termin zur Einrichtung, einer mehrtägigen Nutzungsphase und einen Abschlusstermin aufzuteilen. Voraussetzung zur Durchführung der Studie ist die funktionierende Implementierung 
+des neuen TOTP-Verfahrens, die gegenwärtig funktioniert und nicht voraussetzt, dass Browser das neue Konzept als Standard unterstützen.
+Die Auswahl der Probanden soll sich auf Nutzer beschränken, die bereits Erfahrung 
+mit zeitbasierten Einmalpasswörter haben, speziell mit den TOTP-Apps (nicht SMS 
+oder Email). Durch Interviews und Fragebögen kann so ermittelt werden, inwiefern 
+die Implementierung des neuen TOTP-Verfahrens eine Verbesserung zu dem 
+gewöhnlichen TOTP-Verfahren darstellt.
+
+\paragraph*{Erwartungen an die Studie}
+\mbox{} \vspace{0.1cm} \\
+Da nun der Forschungsansatz vorgestellt wurde, stellt sich die Frage, welche 
+Erwartungen an die Studie gestellt werden. Was soll die Studie bewirken
+\\\\
+Zum einen gibt es die Zeitmessung der Einrichtungs- und 
+Authentisierungsvorgänge. Allerdings wird sie ohne eine zweite Probandengruppe, 
+die das gewöhnliche TOTP-Verfahren testet, keinen echten Vergleichswert haben. 
+Dennoch kann ihre Dimension als Vergleich für ähnliche Studien genutzt werden. 
+Die Zeitmessung basiert auf einem Logging: also was tut der Nutzer beim 
+Webdienst. So können auch fehlgeschlagene Anmeldungen beziffert werden. D.h. man 
+kann keine Aussage darüber treffen, ob das neue TOTP-Verfahren nun tatsächlich 
+schneller als das gewöhnliche ist. Mit einer zweiten Probandengruppe für das 
+gewöhnliche Verfahren könnte man eine Aussage treffen. Mit den 
+Fragen im Interview kann zumindest festgestellt werden, ob die Teilnehmer das 
+neue TOTP-Verfahren schneller oder langsamer empfinden und aus welchen Gründen.
+\\\\
+Bezüglich der Nutzerfreundlichkeit / Gebrauchstauglichkeit und der 
+Nutzererfahrung geben die SUS und der UEQ eine gute Vorstellung davon, wie die 
+beiden Verfahren sich hinsichtlich des Authentisierungsvorgangs unterscheiden. 
+Auch gibt das Interview in der Abschlussveranstaltung Aufschluss darüber, aus 
+welchen Gründen die Teilnehmer eines der Systeme bevorzugen. Die Fragebögen (SUS 
+und UEQ) zur Einrichtung sind eher informativ, da bereits vermutet wird, dass das 
+Einrichtungsverfahren mit der bereitgestellten Implementierung etwas aufwendiger 
+ist als die Einrichtung des gewöhnlichen Verfahrens. Die Fragen 
+und Beobachtungen bezüglich der Einrichtung dienen dazu, die Probleme der zu 
+identifizieren und neue Ideen zu sammeln, um den Vorgang zukünftig leichter 
+zu gestalten.

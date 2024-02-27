@@ -1,0 +1,105 @@
+Die Authentisierung dauerte im Median $8{,}5~s$ und im bereinigten Mittelwert 
+$10,1~s$ (IRQ). Die kürzeste Messung zeigt, dass die Authentisierung innerhalb 
+von ca. $4~s$ machbar ist. Es ist wichtig zu verstehen, dass die in dieser 
+Arbeit gemessenen Authentisierungszeiten nur die Zeit von der erfolgreichen 
+Eingabe des Passworts bis zur erfolgreichen Validierung der TOTPs meint. Die 
+Blue TOTP Extension fordert das TOTP nur dann von der App an, wenn sie vor der 
+Eingabe des Benutzernamens und Passworts mit der App verbunden ist. D.h., es 
+gibt (bis auf die nicht identifizierbaren Messwerte mit Fallback-Option) keine 
+Messwerte, bei denen der Proband sein Smartphone suchen musste oder während 
+der Messung noch die Extension und die App verbinden musste. D.h. ,wenn man 
+die Mediane oder oder bereinigten Mittelwerte betrachtet, dann bekommt man 
+direkt eine Vorstellung davon, wie die Authentisierungszeiten sind, wenn die 
+Blue TOTP App und Extension sich selbstständig wieder verbinden würden und der 
+Nutzer Bluetooth an beiden Geräten (Computer und Smartphone) immer aktiviert 
+lässt. In der Studie von \textcite{Reese} wurde die Authentisierungszeit 
+genauso definiert wie hier. Dabei hatte das traditionelle TOTP-Verfahren einen 
+Median von $15,1~s$, d.h. beinahe doppelt so viel Zeit wie Blue TOTP. Da Blue 
+TOTP aus Nutzersicht stark dem Push-Verfahren ähnelt, ist auch dieser 
+Vergleich interessant. Hier zeigt die Studie von \textcite{Resse} einen Median 
+von $11{,}8~s$. Beim schnellsten Verfahren der Studie (Universal Second 
+Factor) sind es $9{,}1~s$. Die Studie von \textcite{Reese} und die Studie in 
+dieser Arbeit haben nur kleine Stichproben von 10 bis 12 Probanden pro 
+Verfahren und es ist nicht möglich die Messungen von Reese mit den Messungen 
+von Blue TOTP hinsichtlich statistischer Signifikanz zu untersuchen. Demnach 
+kann man Hypothese (b) \glqq Der Prototyp des neuen Verfahrens für 
+zeitbasierte Einmalpasswörter benötigt bzgl. der Authentisierungsvorgänge 
+weniger Zeit als das gewöhnliche TOTP-Verfahren\grqq{} weder bestätigen noch 
+falsifizieren. Aber es lässt sich vermuten, dass Blue TOTP hinsichtlich der 
+Authentisierungszeit schneller als das traditionelle TOTP Verfahren ist.
+\\\\
+Man kann die Forschungsfrage, welche Auswirkungen die Implementierung (also 
+Blue TOTP) auf die Task Completion Time hat, aus der Sicht betrachten, ob die 
+Nutzer über den Verlauf der Studie kürzere Authentisierungszeiten erzielen 
+konnten. Bezieht man sich auf den Median pro Tag ist eine leichte Tendenz zu 
+erkennen, dass die Probanden bei täglicher Nutzung insgesamt schneller werden.
+\\\\
+Bei den Skalen des UEQ überragt Blue TOTP das traditionelle TOTP in jeder 
+einzelnen Skala. Statistische Signifikanz zwischen den Systemen wird in den 
+beiden Skalen Attraktivität und Originalität erreicht. Der Grund, dass Blue 
+TOTP in der Attraktivität und den hedonischen Qualitäten (Stimulation und 
+Originalität) einen besseren Mittelwert erreicht als das trad. TOTP, liegt 
+vermutlich daran, dass Probanden das neue Verfahren als eine Innovation direkt 
+wahrnehmen (z.B. durch weniger Nutzerinteraktionen oder Zeitersparnis) oder 
+zumindest das Potential erkennen, dass Blue TOTP zukünftig erfüllen könnte. 
+Die Werte von Blue TOTP für Attraktivität mit ca. $1{,}0$ und Stimulation mit 
+$0{,}8$ sind nahe bzw. auf der Grenze zum neutralen Bereich. Allerdings muss 
+man berücksichtigen, dass hier ein Verfahren zur 2FA untersucht wird und nicht 
+ein marktfähiges Produkt. Wie stimulierend und attraktiv kann 2FA sein? 2FA 
+ist etwas, das ein Nutzer tut, um mehr Sicherheit zu erzielen und nicht, weil 
+er es aufgrund eines Verlangens nutzen will. Daher sind die anderen Skalen 
+Durchschaubarkeit, Effizienz und Steuerbarkeit interessanter. Eine Erklärung 
+dafür, wieso Blue TOTP eher durchschaubar ist, wäre, dass es weniger 
+durchschauen lässt. Es klingt widersprüchlich, meint aber, dass der Nutzer die 
+Einmalpasswörter fast nicht wahrnimmt und sich somit wenig Gedanken darüber 
+macht. Bei den einzelnen Gegensatzpaaren zur Durchschaubarkeit haben die 
+Probanden Blue TOTP vor allem als übersichtlicher, einfacher und leichter zu 
+erlernen bewertet. Denn alles was der Nutzer durchschauen muss ist \glqq Wie 
+verbinde ich App und Extension?\grqq{} und \glqq Wo bestätige ich die 
+Notification/Anfrage?\grqq{}. Bluetooth sollte für die meisten Probanden eine vertraute Technologie sein. Und der kognitive Aufwand aus \glqq Wo finde ich 
+mein TOTP in der TOTP-App?\grqq{} und \glqq Wie lange ist es noch gültig?\grqq{} 
+entfällt bei Blue TOTP. Ein Unterschied von $0{,}5$ Punkten liegt zwischen der Effizienz 
+der Systeme. Es wird vermutet, dass die Probanden Blue TOTP effizienter 
+wahrnehmen, weil die neue Aufgabe, vor jeder Anmeldung App und Extension zu 
+verbinden und eine Notification bestätigen, weniger aufwendig als die alte 
+Aufgabe, die TOTP-App und das darin befindliche TOTP zu suchen, abzulesen und 
+in der Website einzugeben. Theoretisch haben die fehlgeschlagenen Anmeldungen 
+auch einen Einfluss auf die Effizienz. Bei $39\%$ der 59 Sitzungen gab es 
+mindestens eine fehlgeschlagene Anmeldung. D.h. pro Nutzer gab es in den 6 
+Nutzungstagen im Durchschnitt ca. $2{,}3$ fehlgeschlagene Anmeldungen. Rein 
+quantitativ spricht es für eine schlechte Effizienz. Die Ursache liegt darin, 
+dass Blue TOTP nur funktioniert, wenn erst App und Extension verbunden sind 
+und dann die Anmeldung mit Benutzername und Passwort beginnt. Die Frage ist, 
+wie sehr die Probanden die Fehlschläge noch in Erinnerung hatten. Denn nach 
+deren Aussagen kann davon ausgegangen werden, dass die meisten Fehlschläge an 
+den ersten Tagen der Studie passierten. Hinsichtlich der Steuerbarkeit haben 
+die Probanden Blue TOTP hauptsächlich besser bewertet, weil sie es 
+unterstützender empfunden haben als das trad. TOTP (siehe Abb. \ref{fig: 
+studie ergebnisse auth ueq bt trad single} Gegensatzpaar behindernd/unterstützend). 
+\\\\
+Bei der SUS-Bewertung der beiden Systeme erhält Blue TOTP einen Median von 
+$78$ Punkten und das traditionelle TOTP einen Median von $73$. Auch in den Q1 
+und Q3 Quartilen sowie den Mittelwerten konnte eine Differenz zu Gunsten von 
+Blue TOTP von ca. 5 Punkten festgestellt werden. Vergleicht man beide Mediane 
+(Blue TOTP, trad. TOTP) mit dem Median zu TOTP aus der Arbeit von 
+\textcite{Reese}, dann stellt man fest, dass Reese’ TOTP $88{,}8$ Punkte 
+erreichte (also 15 Punkte mehr als trad. TOTP hier). Bei Reese befanden sich 
+die Probanden nicht in der Situation, zwei verschiedene Systeme zu bewerten. 
+Jeder Proband hat nur ein System bewertet. In der Studie von Blue TOTP wussten 
+die Probanden allerdings, dass es darum ging TOTPs mit Blue TOTP zu verbessern 
+und mussten ihre Bewertung zum trad. TOTP auf Basis ihrer Erfahrung bewerten, 
+die je nach Proband unterschiedlich viele Tage zurückliegt. Die Frage, warum 
+sich die Werte von Reese' SUS-Bewertung und der SUS-Bewertung der trad. TOTPs 
+hier so sehr unterscheiden, kann nicht beantwortet werden. Aber es zeigt, dass 
+die Ergebnisse von \textcite{Reese} bzgl. der SUS-Bewertung nicht als Referenz 
+genutzt werden sollten.
+\\\\
+Hypothese (a) \glqq Der Prototyp des neuen Verfahrens für zeitbasierte 
+Einmalpasswörter ist nutzerfreundlicher als das gewöhnliche 
+TOTP-Verfahren\grqq{} kann aufgrund des SUS und UEQ nicht bestätigt werden, da 
+keine statistische Signifikanz vorliegt, außer bei Attraktivität und 
+Originalität des UEQ. Allerdings lässt sich auch hier anhand der einstimmigen 
+Werte in allen Skalen des UEQ und des SUS sowie in den Aussagen der Probanden, 
+dass mind. 5 von 10 Probanden Blue TOTP nutzerfreundlicher als das trad. TOTP 
+empfinden, vermuten, dass Blue TOTP bzgl. der Authentisierung 
+nutzerfreundlicher als das trad. TOTP ist.

@@ -1,0 +1,42 @@
+Fasst man die Ergebnisse der Studie von Reese et al. \autocite{Reese} zusammen, ist U2F die 
+schnellste Methode für die Zwei-Faktor-Authentisierung. Und trotzdem erreicht U2F 
+zusammen mit SMS die niedrigste SUS-Punktzahl. Gegenteilig dazu verhalten sich die 
+Werte zu den TOTPs. Deren Zeitaufwand ist verhältnismäßig zu den anderen Verfahren 
+mittel bis hoch, aber die SUS-Bewertung ist die höchste (Passwörter ausgenommen). 
+Das zweitschnellste Verfahren sind die Push-Benachrichtigungen, allerdings soll es 
+vorgekommen sein, dass Teilnehmer die Push-Nachricht nicht empfingen und die 
+entsprechende App selbst öffnen mussten, um anschließend den Zugang zum Dienst zu 
+bestätigen. \autocite[10]{Reese}
+\\\\
+Jedoch sollte man den SUS-Bewertungen nicht allzu viel Bedeutung zuschreiben. Eine 
+andere Studie von \textcite{Acemyan} hat gezeigt, dass Push die höchste 
+SUS-Punktzahl mit ca. 87 (Median) erreichte, während TOTP (ebenfalls wie bei der Studie von \textcite{Reese} mit dem Google Authenticator) nur ca. 70 Punkte erreichte. U2F erreichte ca 
+77 Punkte. D.h. die SUS-Bewertung von Reese et al. widerspricht der Bewertung von 
+Acemyan et al. Zu der Studie von Acemyan et al. sei zu sagen, dass es 20 Teilnehmer 
+waren, die innerhalb einer Veranstaltung vier verschiedene 2FA-Verfahren genutzt 
+haben. D.h. sie haben das Verfahren nur einmal getestet und dann den jeweiligen 
+SUS-Fragebogen ausgefüllt. \autocite{Acemyan}
+\\\\
+Betrachtet man die Verfahren dahingehend, welche Interaktionen der Nutzer vornehmen 
+muss, dann sind U2F Security Keys sehr gering im Aufwand. Man schließt den Security 
+Key an und drückt einen Knopf, um sich zu authentisieren. Allerdings benötigt man 
+einen neuen Gegenstand für die 2FA. Dagegen besitzen die meisten Personen, 
+die 2FA nutzen, ein Smartphone. D.h. sie benötigen keinen neuen Gegenstand. Daher 
+sind Push und TOTP attraktiv. TOTP benötigt im Vergleich zu Push 
+weitere Interaktionen. Man muss das Smartphone entsperren, die App finden, öffnen, 
+den Eintrag für den entsprechenden Dienst finden und dann die sechs Ziffern ablesen 
+und im Browser eintippen. Bei Push muss man lediglich das Smartphone entsperren, in 
+die Benachrichtigungen schauen und bei der entsprechenden Benachrichtigung auf 
+\glqq Zustimmen\grqq{} oder \glqq Ablehnen\grqq{} tippen. Diesbezüglich ist SMS eine Mischung aus beiden 
+Verfahren (Benachrichtigung und Abtippen). So spiegeln auch die Zeiten von Push und 
+U2F ihren eher niedrigen Interaktionsaufwand wider.
+\\\\
+Den Aspekt der Sicherheit sollte man allerdings mehr Bedeutung zuschreiben, denn 
+mehr Sicherheit ist der Grund, wieso man 2FA betreibt. Die vorab generierten Codes 
+sind das unsicherste Verfahren, da sie nur ein weiteres Passwort sind, 
+dass erraten werden kann. Schon etwas mehr Sicherheit bietet SMS, allerdings hat es 
+Schwächen seitens des Mobilfunks, die bspw. bei den TOTPs entfallen. Beide Verfahren 
+(SMS und TOTP) sind genauso wie Push-Benachrichtigungen nicht Phishing-resistent. 
+Bei Push kommt die Gefahr der Gewohnheit, jede Authentisierungsanfrage zu 
+bestätigen, bzw. MFA-Fatigue hinzu. Das sicherste Verfahren ist U2F, solang der 
+Computer bzw. Browser frei von entsprechender bösartiger Software ist.

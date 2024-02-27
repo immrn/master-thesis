@@ -1,0 +1,49 @@
+Der Universal Second Factor (U2F) ist ein Standard zur Zwei-Faktor-Authentisierung, 
+der von der Fast Identity Online (FIDO) Alliance entwickelt wurde. Der Standard 
+bietet den besten Schutz auf externer Hardware wie einem USB-Gerät (z.B. der 
+YubiKey), kann aber auch als reine Softwarelösung umgesetzt werden \autocite[4]{u2f}. Ist 
+das U2F-Gerät eingerichtet, meldet sich der Nutzer beim Dienstanbieter mit 
+Benutzername und Passwort an. Danach muss er lediglich eine Interaktion mit dem 
+U2F-Gerät tätigen, damit dieses ihn vollständig beim Dienstanbieter authentisiert. 
+Die Interaktion kann auf verschiedene Weisen umgesetzt werden. Die einfachste Form 
+ist das Drücken eines Knopfes am U2F-Gerät, aber auch biometrische Eingaben wie der 
+Scan der Iris oder des Fingerabdrucks sind möglich. Evtl. kann es störend sein, dass 
+der Nutzer bei dieser Methode einen zusätzlichen Gegenstand mit sich führen muss.
+\\\\
+Bei der Einrichtung des Verfahrens stellt die Website innerhalb des Browsers mit 
+einer Javascript-Funktion eine Anfrage an das U2F-Gerät. Nun interagiert der Nutzer 
+mit seinem U2F-Gerät (z.B. Drücken eines Knopfes), um die Anfrage zu bestätigen. 
+Vereinfacht erklärt ist der weitere Verlauf wie folgt. Das U2F-Gerät erstellt dann 
+ein asymmetrisches Schlüsselpaar. Dieses verwahrt es zusammen mit Informationen wie 
+der Domain des Dienstanbieters in seinem eigenen Speicher. Dann übergibt das 
+U2F-Gerät den öffentlichen Schlüssel mit einigen anderen Informationen an den 
+Dienstanbieter (im Hintergrund über den Browser). Pro Dienstanbieter wird ein neues 
+Schlüsselpaar erzeugt. Beim eigentlichen Authentisierungsvorgang erhält das 
+U2F-Gerät Informationen wie die Domain, die vom Browser selbst geprüft wurden, und 
+identifiziert so den benötigten privaten Schlüssel. Das U2F-Gerät signiert einige 
+der erhaltenen Informationen und sendet sie (über den Browser) zurück an den 
+Dienstanbieter. Dieser verifiziert die Signatur dann mit dem zugehörigen 
+öffentlichen Schlüssel. Man kann außerdem mehrere U2F-Geräte für denselben Dienst 
+nutzen und außerdem können mehrere U2F-Geräte an ein Gerät angeschlossen werden. 
+Darüber hinaus gibt es auch Lösungen mit Near Field Communication (NFC), um das 
+U2F-Gerät an einem Smartphone zu verwenden, und mit Bluetooth. \autocite{u2f}
+\\\\
+Durch seine Sicherheitsmechanismen hat U2F bisher keine bekannten 
+Sicherheitslücken. In der Praxis kann es durchaus vorkommen, dass in der gesamten 
+Kette des Protokolls eine Implementierung fehlerhaft vorgenommen wurde. 
+Beispielsweise kann eine Lücke im Browser oder im U2F-Gerät entstehen. So konnten 
+Forscher im Jahr 2021 mit einer Side-Channel-Attack die Informationen eines Google 
+Titan Security Key kopieren \autocite{Roche}. Dem sei anzumerken, dass eine solcher Angriff 
+komplex ist und nur mit hochpreisigen Geräten (ca. 12.000 US-Dollar) vorgenommen 
+werden kann. Weitere Angriffe sind bspw. bei der Einrichtung möglich, wenn die 
+Website oder eine installierte Browser-Extension bösartig sind \autocite{Yadav}. Bei Verlust 
+eines U2F-Gerätes sollte man ein Backup-2FA-Verfahren wie TOTP oder Push 
+eingerichtet haben.
+\\\\
+In der Studie von \textcite{Reese} haben die Teilnehmer der U2F-Gruppe 
+sich mittels YubiKeys authentisiert. Die SUS-Bewertung liegt im Median bei 75 und im 
+Mittelwert bei $73{,}1$ Punkten. D.h. zusammen mit dem SMS-Verfahren 
+(75 Punkte im Median und Mittelwert) ist es das am schlechtesten bewertete Verfahren 
+der Studie. \textcite{Reese} vermuten, dass einige Teilnehmer den Yubikey verkehrt herum 
+angeschlossen haben (schmaler USB-Stecker). Dagegen ist U2F zeitlich betrachtet mit 
+$9{,}1~s$ im Median und $13{,}0~s$ im Mittelwert das schnellste Verfahren der Studie.

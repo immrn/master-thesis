@@ -1,0 +1,353 @@
+% Futura als Schrift nutzen
+% copyright 2008-2019 by Thomas Benkert
+% http://latex.tu-freiberg.de
+% latex at tu bindestrich freiberg punkt de
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dieses Werk ist unter einem Creative Commons 
+% Namensnennung - Keine Bearbeitung 3.0 Deutschland Lizenzvertrag lizenziert. 
+% Um die Lizenz anzusehen, gehen Sie bitte zu http://creativecommons.org/licenses/by-nd/3.0/de/ 
+% oder schicken Sie einen Brief an 
+% Creative Commons, 171 Second Street, Suite 300, San Francisco, California 94105, USA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\newcommand{\TUBAFhausschrift@name}{TUBAFhausschrift}
+\newcommand{\TUBAFhausschrift@date}{2019/04/01}
+\newcommand{\TUBAFhausschrift@version}{2.5.1}
+%
+\ProvidesPackage{\TUBAFhausschrift@name}[\TUBAFhausschrift@date\space v.\TUBAFhausschrift@version\space Thomas 
+Benkert]
+%
+\typeout{Package \TUBAFhausschrift@name \space\TUBAFhausschrift@date\space v.\TUBAFhausschrift@version\space 
+Thomas Benkert^^J
+    \@spaces\@spaces\@spaces\@spaces\@spaces\@spaces TUBAF-LaTeX: Corporate Design 2013^^J
+    \@spaces\@spaces\@spaces\@spaces\@spaces\@spaces Die Hausschrift Futura fuer LaTeX-Vorlagen^^J 
+    \@spaces\@spaces\@spaces\@spaces\@spaces\@spaces im CD der TU Bergakademie Freiberg.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% benötigte Pakete
+\RequirePackage{xkeyval}
+\RequirePackage{ifthen}
+\RequirePackage{xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% neue Schlüssel, Länge, Befehle
+\newboolean{TUBAFhausschrift@futura}\setboolean{TUBAFhausschrift@futura}{true}
+%
+\define@key{TUBAFhausschrift}{alt}{}%
+%
+\newlength{\TUBAFhausschrift@strichstaerke}
+\newlength{\TUBAFhausschrift@strichstaerkei}
+\newlength{\TUBAFhausschrift@strichstaerkeex}
+\newcommand{\TUBAFhausschrift@strichstaerkecor}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paketoptionen
+\DeclareOptionX{staerke}[mediumlight]{%
+    \XKV@cc*+[\val\nr]{#1}{false,true,light,mediumlight,medium,heavy,bold,black}{%
+    \ifcase\nr\relax%
+        % false
+        \setboolean{TUBAFhausschrift@futura}{false}%
+       \or%
+        % true = mediumlight
+        \renewcommand{\seriesdefault}{m}%
+        \renewcommand{\mddefault}{m}%
+        \renewcommand{\bfdefault}{mb}%
+        %
+        \setkeys{TUBAFhausschrift}{\savevalue{alt}=mediumlight}%
+        \setlength{\TUBAFhausschrift@strichstaerkei}{.78pt}%
+        \renewcommand{\TUBAFhausschrift@strichstaerkecor}{.17}%
+       \or%
+        % light (Light/Book)
+        \renewcommand{\seriesdefault}{l}%
+        \renewcommand{\mddefault}{l}%
+        \renewcommand{\bfdefault}{m}%
+        %
+        \setkeys{TUBAFhausschrift}{\savevalue{alt}=light}%
+        \setlength{\TUBAFhausschrift@strichstaerkei}{.59pt}%
+        \renewcommand{\TUBAFhausschrift@strichstaerkecor}{.14}%
+       \or%
+        % medium light (Book/Medium}
+        \renewcommand{\seriesdefault}{m}%
+        \renewcommand{\mddefault}{m}%
+        \renewcommand{\bfdefault}{mb}%
+        %
+        \setkeys{TUBAFhausschrift}{\savevalue{alt}=mediumlight}%
+        \setlength{\TUBAFhausschrift@strichstaerkei}{.78pt}%
+        \renewcommand{\TUBAFhausschrift@strichstaerkecor}{.17}%
+       \or%
+        % medium (Medium/Heavy}
+        \renewcommand{\seriesdefault}{mb}%
+        \renewcommand{\mddefault}{mb}%
+        \renewcommand{\bfdefault}{sb}%
+        %
+        \setkeys{TUBAFhausschrift}{\savevalue{alt}=medium}%
+        \setlength{\TUBAFhausschrift@strichstaerkei}{1.05pt}%
+        \renewcommand{\TUBAFhausschrift@strichstaerkecor}{.23}%
+       \or%
+        % heavy (Heavy/Bold}
+        \renewcommand{\seriesdefault}{sb}%
+        \renewcommand{\mddefault}{sb}%
+        \renewcommand{\bfdefault}{b}%
+        %
+        \setkeys{TUBAFhausschrift}{\savevalue{alt}=heavy}%
+        \setlength{\TUBAFhausschrift@strichstaerkei}{1.36pt}%
+        \renewcommand{\TUBAFhausschrift@strichstaerkecor}{.28}%
+       \or%
+        % bold (Bold/Extra Black}
+        \renewcommand{\seriesdefault}{b}%
+        \renewcommand{\mddefault}{b}%
+        \renewcommand{\bfdefault}{eb}%
+        %
+        \setkeys{TUBAFhausschrift}{\savevalue{alt}=bold}%
+        \setlength{\TUBAFhausschrift@strichstaerkei}{1.75pt}%
+        \renewcommand{\TUBAFhausschrift@strichstaerkecor}{.35}%
+       \or%
+        % black (Extra Black/Black Regular}
+        \renewcommand{\seriesdefault}{eb}%
+        \renewcommand{\mddefault}{eb}%
+        \renewcommand{\bfdefault}{ub}%
+        %
+        \setkeys{TUBAFhausschrift}{\savevalue{alt}=black}%
+        \setlength{\TUBAFhausschrift@strichstaerkei}{2.43pt}%
+        \renewcommand{\TUBAFhausschrift@strichstaerkecor}{.48}%
+    \fi%
+    }{\PackageWarningNoLine{\TUBAFhausschrift@name}{The input 'staerke=\val' is incorrect and ignored}}%
+}
+%
+\DeclareOptionX*{\PackageWarningNoLine{\TUBAFhausschrift@name}{Unknown option ignored: \CurrentOption}}
+%
+\ExecuteOptionsX{staerke=mediumlight}
+\ProcessOptionsX\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Schriften setzen
+\ifthenelse{\boolean{TUBAFhausschrift@futura}}{%
+    \renewcommand{\ttfamily}{\fontfamily{cmtt}\fontseries{m}\selectfont}%
+    %
+    \renewcommand{\familydefault}{bfu}%
+    \renewcommand{\rmdefault}{bfu}%
+    \renewcommand{\sfdefault}{bfu}%
+   }{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% korrekte Strichstärke berechnen (prim. Strichstärke in Ghostview gemessen)
+%%\AtBeginDocument{% keine head/foot lines, wenn Paket nachträglich geladen
+    \setlength{\TUBAFhausschrift@strichstaerkeex}{1ex}
+    
+\setlength{\TUBAFhausschrift@strichstaerke}{\TUBAFhausschrift@strichstaerkecor\TUBAFhausschrift@strichstaerkeex}
+%%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Test von Schriftbefehlen
+\define@choicekey+{TUBAFhausschrift}{staerke}[\val\nr]{light,mediumlight,medium,heavy,bold,black}{%
+    \ifcase\nr\relax%
+        \fontseries{l}\selectfont% light (Light/Book)
+        \renewcommand{\bfdefault}{m}%
+       \or%
+        \fontseries{m}\selectfont% medium light (Book/Medium}
+        \renewcommand{\bfdefault}{mb}%
+       \or%
+        \fontseries{mb}\selectfont% medium (Medium/Heavy}
+        \renewcommand{\bfdefault}{sb}%
+       \or%
+        \fontseries{sb}\selectfont% heavy (Heavy/Bold}
+        \renewcommand{\bfdefault}{b}%
+       \or%
+        \fontseries{b}\selectfont% bold (Bold/Extra Black}
+        \renewcommand{\bfdefault}{eb}%
+       \or%
+        \fontseries{eb}\selectfont% black (Extra Black/Black Regular}
+        \renewcommand{\bfdefault}{ub}%
+    \fi%
+   }{%
+    \PackageWarning{\TUBAFhausschrift@name}{%
+        The input 'TUBAFhausschrift[staerke=\val] is incorrect and ignored}%
+}
+%
+\newcommand{\TUBAFhausschrift}[1][staerke=\usevalue{alt}]{\@bsphack\setkeys{TUBAFhausschrift}{#1}\@esphack}
+% Ende Test von Schriftbefehlen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Umdefinieren fehlender textcomp-Zeichen
+
+%textmu
+%textrightarrow
+%textblank
+%textdblhyphen
+%textzerooldstyle
+%textoneoldstyle
+%texttwooldstyle
+%textthreeoldstyle
+%textfouroldstyle
+%textfiveoldstyle
+%textsixoldstyle
+%textsevenoldstyle
+%texteightoldstyle
+%textnineoldstyle
+%textlangle
+%textrangle
+%textmho
+%textbigcircle
+%textuparrow
+%textdownarrow
+%textborn
+%textdivorced
+%textdied
+%textleaf
+%textmarried
+%textmusicalnote
+%textdblhyphenchar
+%textperthousand
+%textdollaroldstyle
+%textcentoldstyle
+%textcolonmonetary
+%textwon
+%textnaira
+%textguarani
+%textpeso
+%textlira
+%textrecipe
+%textdong
+%textpertenthousand
+%textpilcrow
+%textbaht
+%textnumero
+%textdiscount
+%textestimated
+%textopenbullet
+%textservicemark
+%textlquill
+%textrquill
+%textcurrency
+%textcopyleft
+%textcircledP
+%textreferencemark
+
+% da sonst Probleme: hier doppelte Klammerung {{}}, dadurch Probleme bei Verwendung in Tabellen -> s.u.
+\AtBeginDocument{%
+    \ifthenelse{\isundefined{\tc@subst}}{}{%
+        % muß im Text manuell umgestellt werden
+        % \t \capitaltie \newtie \capitalnewtie
+        % wird auf cmss umgestellt
+        \let\OLDtextperthousand\textperthousand
+            \renewcommand*{\textperthousand}{{\fontfamily{cmss}\selectfont\OLDtextperthousand}}
+        \let\OLDtextcurrency\textcurrency
+            \renewcommand*{\textcurrency}{{\fontfamily{cmss}\selectfont\OLDtextcurrency}}
+        \let\OLDtextmu\textmu
+            \renewcommand*{\textmu}{{\fontfamily{cmss}\selectfont\OLDtextmu}}
+        \let\OLDtextleftarrow\textleftarrow
+            \renewcommand*{\textleftarrow}{{\fontfamily{cmss}\selectfont\OLDtextleftarrow}}
+        \let\OLDtextrightarrow\textrightarrow
+            \renewcommand*{\textrightarrow}{{\fontfamily{cmss}\selectfont\OLDtextrightarrow}}
+        \let\OLDtextblank\textblank
+            \renewcommand*{\textblank}{{\fontfamily{cmss}\selectfont\OLDtextblank}}
+        \let\OLDtextdblhyphen\textdblhyphen
+            \renewcommand*{\textdblhyphen}{{\fontfamily{cmss}\selectfont\OLDtextdblhyphen}}
+        \let\OLDtextzerooldstyle\textzerooldstyle
+            \renewcommand*{\textzerooldstyle}{{\fontfamily{cmss}\selectfont\OLDtextzerooldstyle}}
+        \let\OLDtextoneoldstyle\textoneoldstyle
+            \renewcommand*{\textoneoldstyle}{{\fontfamily{cmss}\selectfont\OLDtextoneoldstyle}}
+        \let\OLDtexttwooldstyle\texttwooldstyle
+            \renewcommand*{\texttwooldstyle}{{\fontfamily{cmss}\selectfont\OLDtexttwooldstyle}}
+        \let\OLDtextthreeoldstyle\textthreeoldstyle
+            \renewcommand*{\textthreeoldstyle}{{\fontfamily{cmss}\selectfont\OLDtextthreeoldstyle}}
+        \let\OLDtextfouroldstyle\textfouroldstyle
+            \renewcommand*{\textfouroldstyle}{{\fontfamily{cmss}\selectfont\OLDtextfouroldstyle}}
+        \let\OLDtextfiveoldstyle\textfiveoldstyle
+            \renewcommand*{\textfiveoldstyle}{{\fontfamily{cmss}\selectfont\OLDtextfiveoldstyle}}
+        \let\OLDtextsixoldstyle\textsixoldstyle
+            \renewcommand*{\textsixoldstyle}{{\fontfamily{cmss}\selectfont\OLDtextsixoldstyle}}
+        \let\OLDtextsevenoldstyle\textsevenoldstyle
+            \renewcommand*{\textsevenoldstyle}{{\fontfamily{cmss}\selectfont\OLDtextsevenoldstyle}}
+        \let\OLDtexteightoldstyle\texteightoldstyle
+            \renewcommand*{\texteightoldstyle}{{\fontfamily{cmss}\selectfont\OLDtexteightoldstyle}}
+        \let\OLDtextnineoldstyle\textnineoldstyle
+            \renewcommand*{\textnineoldstyle}{{\fontfamily{cmss}\selectfont\OLDtextnineoldstyle}}
+        \let\OLDtextlangle\textlangle
+            \renewcommand*{\textlangle}{{\fontfamily{cmss}\selectfont\OLDtextlangle}}
+        \let\OLDtextrangle\textrangle
+            \renewcommand*{\textrangle}{{\fontfamily{cmss}\selectfont\OLDtextrangle}}
+        \let\OLDtextmho\textmho
+            \renewcommand*{\textmho}{{\fontfamily{cmss}\selectfont\OLDtextmho}}
+        \let\OLDtextbigcircle\textbigcircle
+            \renewcommand*{\textbigcircle}{{\fontfamily{cmss}\selectfont\OLDtextbigcircle}}
+        \let\OLDtextuparrow\textuparrow
+            \renewcommand*{\textuparrow}{{\fontfamily{cmss}\selectfont\OLDtextuparrow}}
+        \let\OLDtextdownarrow\textdownarrow
+            \renewcommand*{\textdownarrow}{{\fontfamily{cmss}\selectfont\OLDtextdownarrow}}
+        \let\OLDtextborn\textborn
+            \renewcommand*{\textborn}{{\fontfamily{cmss}\selectfont\OLDtextborn}}
+        \let\OLDtextdivorced\textdivorced
+            \renewcommand*{\textdivorced}{{\fontfamily{cmss}\selectfont\OLDtextdivorced}}
+        \let\OLDtextdied\textdied
+            \renewcommand*{\textdied}{{\fontfamily{cmss}\selectfont\OLDtextdied}}
+        \let\OLDtextleaf\textleaf
+            \renewcommand*{\textleaf}{{\fontfamily{cmss}\selectfont\OLDtextleaf}}
+        \let\OLDtextmarried\textmarried
+            \renewcommand*{\textmarried}{{\fontfamily{cmss}\selectfont\OLDtextmarried}}
+        \let\OLDtextmusicalnote\textmusicalnote
+            \renewcommand*{\textmusicalnote}{{\fontfamily{cmss}\selectfont\OLDtextmusicalnote}}
+        \let\OLDtextdblhyphenchar\textdblhyphenchar
+            \renewcommand*{\textdblhyphenchar}{{\fontfamily{cmss}\selectfont\OLDtextdblhyphenchar}}
+        \let\OLDtextdollaroldstyle\textdollaroldstyle
+            \renewcommand*{\textdollaroldstyle}{{\fontfamily{cmss}\selectfont\OLDtextdollaroldstyle}}
+        \let\OLDtextcentoldstyle\textcentoldstyle
+            \renewcommand*{\textcentoldstyle}{{\fontfamily{cmss}\selectfont\OLDtextcentoldstyle}}
+        \let\OLDtextcolonmonetary\textcolonmonetary
+            \renewcommand*{\textcolonmonetary}{{\fontfamily{cmss}\selectfont\OLDtextcolonmonetary}}
+        \let\OLDtextwon\textwon
+            \renewcommand*{\textwon}{{\fontfamily{cmss}\selectfont\OLDtextwon}}
+        \let\OLDtextnaira\textnaira
+            \renewcommand*{\textnaira}{{\fontfamily{cmss}\selectfont\OLDtextnaira}}
+        \let\OLDtextguarani\textguarani
+            \renewcommand*{\textguarani}{{\fontfamily{cmss}\selectfont\OLDtextguarani}}
+        \let\OLDtextpeso\textpeso
+            \renewcommand*{\textpeso}{{\fontfamily{cmss}\selectfont\OLDtextpeso}}
+        \let\OLDtextlira\textlira
+            \renewcommand*{\textlira}{{\fontfamily{cmss}\selectfont\OLDtextlira}}
+        \let\OLDtextrecipe\textrecipe
+            \renewcommand*{\textrecipe}{{\fontfamily{cmss}\selectfont\OLDtextrecipe}}
+        \let\OLDtextdong\textdong
+            \renewcommand*{\textdong}{{\fontfamily{cmss}\selectfont\OLDtextdong}}
+        \let\OLDtextpertenthousand\textpertenthousand
+            \renewcommand*{\textpertenthousand}{{\fontfamily{cmss}\selectfont\OLDtextpertenthousand}}
+        \let\OLDtextpilcrow\textpilcrow
+            \renewcommand*{\textpilcrow}{{\fontfamily{cmss}\selectfont\OLDtextpilcrow}}
+        \let\OLDtextbaht\textbaht
+            \renewcommand*{\textbaht}{{\fontfamily{cmss}\selectfont\OLDtextbaht}}
+        \let\OLDtextnumero\textnumero
+            \renewcommand*{\textnumero}{{\fontfamily{cmss}\selectfont\OLDtextnumero}}
+        \let\OLDtextdiscount\textdiscount
+            \renewcommand*{\textdiscount}{{\fontfamily{cmss}\selectfont\OLDtextdiscount}}
+        \let\OLDtextestimated\textestimated
+            \renewcommand*{\textestimated}{{\fontfamily{cmss}\selectfont\OLDtextestimated}}
+        \let\OLDtextopenbullet\textopenbullet
+            \renewcommand*{\textopenbullet}{{\fontfamily{cmss}\selectfont\OLDtextopenbullet}}
+        \let\OLDtextservicemark\textservicemark
+            \renewcommand*{\textservicemark}{{\fontfamily{cmss}\selectfont\OLDtextservicemark}}
+        \let\OLDtextlquill\textlquill
+            \renewcommand*{\textlquill}{{\fontfamily{cmss}\selectfont\OLDtextlquill}}
+        \let\OLDtextrquill\textrquill
+            \renewcommand*{\textrquill}{{\fontfamily{cmss}\selectfont\OLDtextrquill}}
+        \let\OLDtextcopyleft\textcopyleft
+            \renewcommand*{\textcopyleft}{{\fontfamily{cmss}\selectfont\OLDtextcopyleft}}
+        \let\OLDtextcircledP\textcircledP
+            \renewcommand*{\textcircledP}{{\fontfamily{cmss}\selectfont\OLDtextcircledP}}
+        \let\OLDtextreferencemark\textreferencemark
+            \renewcommand*{\textreferencemark}{{\fontfamily{cmss}\selectfont\OLDtextreferencemark}}
+        \let\OLDtextcurrency\textcurrency
+            \renewcommand*{\textcurrency}{{\fontfamily{cmss}\selectfont\OLDtextcurrency}}
+    }%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\endinput
+

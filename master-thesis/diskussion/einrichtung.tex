@@ -1,0 +1,93 @@
+Die Einrichtung dauert im Mittel $3~min$ $48~s$. Der Median 
+beträgt ca. $3~min$. Die kürzeste Messung zeigt, dass die 
+Einrichtung innerhalb von $90~s$ durchführbar ist. Wie bei allen 
+Werten der Studie sind Messwerte von 11 bzw. 10 Probanden meist 
+nicht aussagekräftig. Aber man bekommt eine Vorstellung, in 
+welcher Größenordnung sich die Ergebnisse befinden. Betrachtet man 
+andere Studien, die die Einrichtung des traditionellen 
+TOTP-Verfahrens gemessen haben, so schneidet Blue TOTP im Median 
+besser ab als der Median von ca. $4~min~50~s$ (Google 
+Authenticator) nach \textcite{Acemyan}. Die Studie von 
+\textcite{Reese} zeigt dagegen deutlich kürzere Einrichtungszeiten 
+mit einem Median von $84~s$. Es war zu erwarten, dass die 
+Einrichtung mit Blue TOTP länger dauert als beim traditionellen 
+Verfahren, da bei Blue TOTP wesentlich mehr Schritte nötig sind, 
+bevor der QR-Code gescannt werden kann und der Nutzer das TOTP in 
+die Website eingibt. Vergleicht man Blue TOTP mit den Einrichtungszeiten anderer 
+2FA-Verfahren, ist der Unterschied noch größer. Es ist nicht konkurrenzfähig 
+zu Zeiten wie $23{,}5~s$ für Push oder $44{,}0~s$ für den Universal Second Factor \autocite{Reese}
+\\\\
+Den höchsten Mittelwert unter den Skalen des UEQ erreichte die 
+Effizienz mit $\bar{x} = 1{,}59$. Allerdings widerspricht der Wert 
+gewissermaßen den Äußerungen der Probanden beim Interview. Hier 
+wurde kritisiert, dass man zu häufig den Fokus zwischen der App 
+und der Extension wechseln muss, was ein Indiz für mangelnde 
+Effizienz ist. Auch hinsichtlich der Task Completion Time für die 
+Einrichtung ist Blue TOTP nicht sonderlich effizient. Dagegen 
+stimmt der niedrige Mittelwert von $\bar{x} = 1{,}11$ für die 
+Durchschaubarkeit mit den Aussagen der Probanden und den 
+Beobachtungen überein. Bspw. war es für die meisten unerwartet, 
+eine Anleitung auf der App zu sehen, wenn man auf den 
+Kamera-Button tippt. Oft wurden die Anleitungen bestätigt, ohne 
+sie gelesen zu haben. Für die Probanden war nicht durchschaubar, 
+wieso kein Echtzeitbild der Smartphone-Kamera zu sehen war, bzw. 
+war es für einige zu viel Text. Genauso wenig hat Blue TOTP 
+kommuniziert, wieso es bspw. einer Extension bedarf oder wofür 
+Bluetooth genutzt wird. Ist ein System nicht durchschaubar, fühlen 
+sich die Probanden vermutlich auch nicht sonderlich 
+zuversichtlich. Zumindest lässt das der Durchschnittswert der 9. 
+Aussage der SUS vermuten. Hier vergaben die Probanden im Mittel 
+eine nahezu neutrale Antwort, ob sie sich sehr zuversichtlich 
+gefühlt haben. Diese geringe Zuversichtlichkeit äußert sich auch 
+darin, dass der Versuchsleiter bei den meisten Einrichtungen 
+zumindest einen Hinweis geben musste, was als nächstes zu tun ist. 
+Es sei noch die Steuerbarkeit erwähnt. Der Mittelwert des UEQ 
+ergibt hier $1{,}25$. Bis auf den Bug, der bei zwei Einrichtungen 
+erschien, gab es keine ungewollten Zwischenfälle, die 
+Steuerbarkeit des System beeinträchtigen würden. Der Autor 
+vermutet, dass der bereits beschriebene häufige Fokuswechsel 
+zwischen Extension und App das Gefühl der Kontrolle entreißt, da 
+man mit der Website einbezogen auf drei User Interfaces achten 
+muss.
+\\\\
+Der SUS ergab eine Punktzahl von $77{,}5$ im Median. Somit gilt 
+nach dem Grenzwert, ab wann ein System als akzeptabel 
+nutzerfreundlich angesehen wird, dass die Einrichtung von Blue 
+TOTP akzeptabel ist \autocite{BrookeRetro}. In der Arbeit von 
+\textcite{Acemyan} erreichte der Google Authenticator (TOTP) für 
+die Einrichtung ca. 52 SUS-Punkte. Allerdings scheint dies keine 
+annähernd repräsentative SUS-Bewertung für das traditionelle 
+TOTP-Verfahren zu sein, wenn schon die Zeitmessung deutlich von 
+den Ergebnissen der Studie von \textcite{Reese} abweicht. 
+Interessant ist auch der Fakt, dass nur drei Probanden bei der 
+Aussage 4, dass sie glauben, Hilfe zu benötigen, eher bis 
+vollständig zustimmen und alle anderen eher bis vollständig 
+dagegen stimmen. Zusammen mit dem Zitat von P1 \glqq Wenn es 
+einmal weiß, geht es\grqq{} und den beschriebenen Beobachtungen 
+ist ersichtlich, dass das System noch ausbaufähig ist, um selbsterklärend zu werden. Die SUS-Bewertungen der Probanden scheinen 
+auch ihren Empfindungen bzgl. der Nutzerfreundlichkeit von Blue 
+TOTP übereinzustimmen, da die Standardabweichung zwischen echter 
+und empfundener Bewertung nur $7{,}7$ beträgt. Schließlich muss 
+man bedenken, dass die Zuordnung der sieben möglichen Antworten 
+auf je eine feste Zahl trifft \autocite[121]{SUS11} und somit eine 
+Diskretisierung stattfindet, durch die praktisch immer eine 
+gewisse Standardabweichung resultiert.
+\\\\
+Hypothese (a) \glqq Der Prototyp des neuen Verfahrens für 
+zeitbasierte Einmalpasswörter ist nutzerfreundlicher als das 
+gewöhnliche TOTP-Verfahren\grqq{} kann bzgl. der Einrichtung nicht 
+quantitativ über SUS und UEQ bestätigt werden, weil die Probanden 
+keinen SUS und UEQ zur Einrichtung des traditionellen Verfahrens 
+ausfüllen mussten. Zu wenige Studien liefern dahingehend 
+Vergleichswerte, zumal deren Experimente sich in Details wie der 
+verwendeten App oder dem Webservice unterscheiden. Das gleiche 
+gilt für die qualitativen Aussagen, die nur einseitig bzgl. Blue 
+TOTP abgefragt wurden. Bzgl. der Forschungsfrage, wie die 
+Implementierung auf die Nutzerfreundlichkeit und Nutzererfahrung 
+ausprägt, lässt sich anhand der UEQ- und SUS-Bewertungen erkennen, 
+dass die Einrichtung solide aber noch nicht ausreichend 
+nutzerfreundlich ist und eine bessere Nutzererfahrung bieten 
+könnte. Die qualitativen Aussagen und Beobachtungen identifizieren 
+einige Probleme der Einrichtung und zeigen, dass sie in ihren 
+Grundzügen funktioniert, aber noch viel Potential zur Verbesserung 
+bietet.

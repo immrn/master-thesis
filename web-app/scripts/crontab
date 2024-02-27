@@ -1,0 +1,5 @@
+# Copy this into crontab
+PRODUCTION=True
+# m h  dom mon dow   command
+0 0 * * * /home/web-app/daily_task_sender_run_by_cron.sh >> /share/daily_task_sender.log 2>&1
+0 19 * * * /home/web-app/task_reminder_run_by_cron.sh >> /share/task_reminder.log 2>&1

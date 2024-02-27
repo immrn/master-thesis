@@ -1,0 +1,67 @@
+Bei der Einrichtung und der Authentisierung muss der Browser dem Konzept zufolge 
+den Benutzernamen und die Domain an die App senden. Außerdem muss er beim Login das 
+HTML-Eingabeelement erkennen und das TOTP von der App verlangen. Also ist der 
+Browser die Partei, der man vertrauen muss. Es muss also bei der Umsetzung der 
+Browser-Partei bedacht werden, dass sie potentiell nicht von einer anderen Partei 
+negativ beeinflusst werden kann.
+\\\\
+Nun benötigt man zunächst einen Browser, der Bluetooth unterstützt. 
+Chromium\footnote{\href{https://www.chromium.org/chromium-projects/}{https://www.chromium.org/chromium-projects/}} 
+ist eine Open Source und beinhaltet die sogenannte Web Bluetooth API. Aber wie kann 
+man den Browser die nötigen Abläufe durchführen lassen? Man könnte von Chromium 
+eine eigene Instanz erstellen (Fork) und die Software für unsere Browser-Rolle 
+integrieren. Für das Konzept wäre das die optimale Option, da man den Browser 
+vollständig kontrolliert. Für eine Lösung, die im Alltag funktionieren soll, würde 
+es bedeuten, dass der Nutzer einen neuen Browser benötigt, nur um unser neues 
+TOTP-Verfahren zu nutzen. Also unpassend. Stattdessen entschied man sich dafür eine 
+Extension für den Chrome Browser zu implementieren, die ebenfalls Zugang zur Web 
+Bluetooth API hat. Allerdings musste man feststellen, dass die API nicht nur der 
+Extension die Fähigkeit verleiht, den Bluetooth-Adapter des Computers zu nutzen, 
+sondern auch der Website, auf der man sich gerade befindet. D.h. immer, wenn die 
+Extension sich mit dem Smartphone verbinden soll, würde das nur funktionieren, wenn 
+der Nutzer mit dem aktuellen Browser Tab eine Website besucht, und es würde auch 
+immer die Website Informationen an das Smartphone senden können. Also hat man einen 
+Weg gesucht, um die Bluetooth-Funktionalität aus der Extension auszugliedern und 
+über eine proprietäre Anwendung für den Computer zu lösen. Dazu entschied man sich 
+für Electron\footnote{\href{https://www.electronjs.org/de/}{https://www.electronjs.org/de/}}, 
+da es gut dokumentiert ist und sich ebenfalls Chromium bedient. Also hat man auch 
+hier wieder einen Bluetooth-Zugang durch Web Bluetooth. Web Bluetooth ist letztlich 
+Bluetooth Low Energy, aber hat das Problem, dass es nur als Central Device, also 
+als Client funktioniert. D.h. unsere PC-Anwendung bzw. die Extension ist die 
+Partei, die nach anderen Bluetooth-Geräten scannt. Das widerspricht der 
+verbreiteten Handhabung, dass das Smartphone häufig als Central Device 
+agiert und nicht als Peripheral Device. Der gute Punkt ist, dass bei Bluetooth Low 
+Energy die Peripherals wenig Energie benötigen, um permanent verfügbar zu sein. 
+Also muss unser Smartphone das Peripheral sein und die Extension bzw. ihre 
+zugehörige Electron-Anwendung das Central.
+\\\\
+Die Electron-Anwendung wurde nur für Windows entwickelt, sollte aber leicht für 
+andere Betriebssysteme gebaut werden können. Sie läuft im Hintergrund und ist im 
+System Tray, also dem Bereich rechts unten in der Taskleiste mit den kleinen 
+Symbolen zu sehen. Man muss aus Sicht des Nutzers die Anwendung einmal installieren 
+und dann nie wieder beachten. Sie wird automatisch beim Start des Systems 
+ausgeführt. Allerdings benötigt sie aufgrund der Architektur von Electron bis zu 
+$50$ MB Arbeitsspeicher. Außerdem scheint es einen Bug zu geben, der die Anwendung mehrfach 
+instanziiert. Rechenleistung benötigt sie nahezu keine, da sie nur selten 
+kleine Bluetooth-Pakte sendet bzw. empfängt und diese mit der Extension 
+austauscht. Diese Kommunikation zwischen der Extension und der Hintergrundanwendung 
+wurde mit WebSockets\footnote{\href{https://developer.mozilla.org/en-US/docs/Web/API/WebSocket?retiredLocale=de}{https://developer.mozilla.org/en-US/docs/Web/API/WebSocket?retiredLocale=de}} 
+gelöst. Allerdings ist die Verbindung nicht sicher, d.h. jede Anwendung auf dem 
+Computer kann die ausgetauschten Informationen auf dem Port mitlesen oder selbst 
+welche senden. In Zukunft müsste auch diese Verbindung sicher sein oder das gesamte 
+Konzept anders gelöst werden, sodass für die Rolle des Browsers aus dem Konzept 
+nicht zwei Programme benötigt werden.
+\\\\
+Ein Überblick zu allen wichtigen Screens der Extension ist in Anhang \ref{anh: blue totp ext screens} 
+zu sehen. Es wurde sich für ein dunkles Design entschieden, das auf zwei 
+Hintergrundfarben (dunkelgrau und ein etwas helleres grau), einer Sekundärfarbe 
+(leicht gräuliches weiß für einen weichen Kontrast) für Schrift und Konturen und 
+einer Primärfarbe (blau) basiert. Einige Buttons haben die Primärfarbe erhalten, 
+damit sie dem Nutzer direkt auffallen. Dadurch werden in den Screens der Anleitung 
+die Buttons hervorgehoben, die zum direkten Abschluss der Einrichtung führen. Die 
+Intention der Anleitung ist es, Nutzer an die Hand zu nehmen, die wenig Erfahrung 
+mit TOTPs haben und darüber, wie man sie einrichtet. Im Nachhinein betrachtet, ist 
+diese Führung irreführend für Nutzer, die schon den QR-Code bei der 2FA-Einrichtung 
+sehen und einfach nur den QR-Code scannen wollen. Im Fall, dass die 
+Hintergrundanwendung nicht läuft, zeigt die Extension Anweisungen, wie man die 
+Hintergrundanwendung wieder startet.

@@ -1,0 +1,37 @@
+Zwei-Faktor-Authentisierung (2FA), auch Zwei-Faktor-Authentifizierung genannt, ist 
+der Nachweis bzw.\ die Prüfung einer Identität über zwei verschiedene Faktoren. Es 
+gibt drei Arten von Faktoren: das Wissen über eine Information (etwas, das man 
+weiß), der Besitz eines Gegenstands (etwas, das man hat), und die Inhärenz einer 
+nicht übertragbaren Eigenschaft des Individuums (etwas, das man ist) \autocite[2]{Marky}. 
+Authentisierung bedeutet also das Erbringen eines Nachweises für die Identität, 
+während die Authentifizierung die Prüfung dieses Nachweises meint.
+\\\\
+\textit{\textbf{Konvention}}:
+Es gibt keinen allgemeinen Oberbegriff für die beiden Begriffe \glqq Authentisierung\grqq{} und \glqq Authentifizierung\grqq{}, daher wird in dieser Arbeit der 
+Begriff \glqq Authentisierung\grqq{} stellvertretend als Oberbegriff verwendet. Denn 
+letztlich fokussiert sich diese Arbeit auf die Art und Weise, wie sich eine Partei authentisiert (ausweist). Die Abläufe der Authentifizierung sind zweitrangig.
+\\\\
+Das Wissen über eine Information ist bspw.\ ein Passwort. Jeder, der das Passwort 
+kennt, kann die Identität des zugehörigen Benutzernamen bezeugen. Jedoch sind 
+Passwörter oft zu schwach und können erraten werden. Das kann auch automatisiert 
+geschehen, indem bspw.\ mit Brute-Force- oder Dictionary-Attacken versucht wird, das 
+Passwort zu erraten \autocite[1162 \psqq]{Bosnjak}.
+\\\\
+Der Besitz eines Gegenstands kann auch die Identität bezeugen. Beispiele für 
+solche Gegenstände sind physische Token (USB-Hardware), Smartcards, Kreditkarten 
+oder das Smartphone \autocite[2]{Marky}. Problematisch ist hierbei der Verlust 
+oder Diebstahl eines solchen Gegenstands.
+\\\\
+Die dritte Art von Faktoren beschreibt etwas, das man ist. Genauer gesagt etwas, das das Individuum eindeutig identifiziert. Beispiele sind biometrische Eigenschaften 
+wie Fingerabdrücke oder Gesichtsmerkmale. \autocite[2]{Marky}
+\\\\
+Das Prinzip der 2FA sieht vor, dass die zwei Faktoren von verschiedener Art sind. Im 
+Kontext bei Online-Accounts auf Webseiten oder Anwendungen ist ein Faktor meist das 
+Passwort, also etwas, das man weiß und der zweite Faktor etwas, das man besitzt 
+(meist das Smartphone oder physische Token). 2FA ist natürlich auch in anderen 
+Kontexten vorgesehen wie bei Zugängen von Gebäuden oder Räumen. Hier könnte ein 
+Faktor in Form von biometrischen Daten und ein Passwort üblich sein. Man nutzt 2FA, da es mehr Sicherheit bietet als nur einen Faktor zu verwenden, der im Fall von Passwörtern keinen ausreichenden Schutz bietet.
+\\\\
+Die 2FA ist eine Spezialisierung der Multi-Faktor-Authentisierung (MFA), die wiederum 
+besagt, dass zwei oder mehr unabhängige Faktoren bei der Authentisierung verwendet 
+werden.

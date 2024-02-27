@@ -1,0 +1,40 @@
+Push-Benachrichtigungen sind Nachrichten, die beim Empfang auf dem Smartphone 
+angezeigt werden. Meist kann der Nutzer mit ihnen interagieren oder direkt die 
+zugehörige App öffnen. Einige Anbieter setzen die 2FA mit Hilfe dieser 
+Push-Benachrichtigung um. D.h. der zweite Faktor ist hier die direkte Nachfrage vom Dienst beim Nutzer, ob sich dieser gerade anmeldet. In der Regel muss der Nutzer eine App des Anbieters auf 
+seinem Smartphone installieren und sich dort mit seinen Zugangsdaten anmelden. Es 
+gibt auch Apps wie Authy OneTouch \autocite{authy}, die als Drittanbieter für die 
+Authentisierung agieren. Somit kann man Authentisierungen für verschiedene Dienste, 
+die Authy OneTouch unterstützen, mit einer App bestätigen. Immer wenn der Nutzer 
+sich dann bspw. im Browser am Computer beim Dienst anmeldet, bekommt er eine 
+Push-Benachrichtigung. Diese enthält einen Text wie \glqq Melden Sie sich gerade an?\grqq{} 
+oder \glqq Bestätigen Sie Ihre Anmeldung\grqq{} und ggf. schon zwei Buttons zum Bestätigen oder 
+Ablehnen des Anmeldungsversuchs. Bestätigt der Nutzer die Anmeldung, dann hat er 
+sich erfolgreich im Browser beim Dienst angemeldet.
+\\\\
+Dazu benötigt das Smartphone einen Internetzugang. Die Verbindung zwischen 
+Smartphone und Anbieter muss selbstverständlich sicher sein. Trotzdem gibt es einige 
+Schwachstellen. Falls der Angreifer weiß, zu welchem Zeitpunkt der Nutzer sich 
+anmelden wird, kann er sich selbst kurz vorher anmelden. Dadurch sieht der Nutzer 
+zwei Anmeldeversuche, die bestätigt werden können. Ist er in dem Moment nicht 
+achtsam und bestätigt einen Anmeldungsversuch, dann ist es möglich, dass er nicht 
+seine Anmeldung, sondern die des Angreifers bestätigt. \autocite[16]{Hess}
+\\\\
+Besonders von Interesse ist die sogenannte MFA-Fatigue \autocite{sosafe}. Dabei hat der Angreifer 
+Benutzername und Passwort des Opfers bereits erlangt und versucht nun immer wieder, 
+sich beim Dienst anzumelden. Das Opfer ist irgendwann genervt von all den 
+Anmeldungsanfragen, sodass es absichtlich die Anmeldung bestätigt und dem Angreifer 
+Zugriff gewährt. Natürlich ist es auch möglich, dass das Opfer die Anmeldung des 
+Angreifers bestätigt, weil es unachtsam ist und dann aus Gewohnheit die Nachricht 
+bestätigt. In diesem Fall musste der Angreifer nicht zwingend viele 
+Anmeldungsversuche unternehmen. Ein brisantes Beispiel ist der erfolgreiche 
+Cyberangriff auf Uber im Jahr 2022, bei dem MFA-Fatigue von Bedeutung war \autocite{Huckle}.
+\\\\
+In der Studie von \textcite{Reese} haben die Teilnehmer der Push-Studiengruppe Authy 
+OneTouch benutzt und nicht eine eigens für die Studie erstellte App. Dennoch sollte 
+es in der Handhabung und in der benötigten Zeit keine nennenswerten Unterschiede 
+geben. Die SUS-Bewertung liegt für den Median bei $81{,}3$ und für den arithmetischen 
+Mittelwert bei 81. Erstaunlich ist, dass die vorab generierten 
+Codes eine ähnliche Bewertung von rund 80 Punkten je Größe aufweisen. Hinsichtlich 
+der benötigten Zeit waren es im Median $11{,}8~s$ und im Mittelwert $16{,}1~s$. Somit wäre das Push-Verfahren das zweitschnellste nach dem untersuchten 
+U2F-Verfahren.

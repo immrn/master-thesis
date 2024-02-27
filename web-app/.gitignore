@@ -1,0 +1,6 @@
+/venv
+/volume
+/**/__pycache__
+
+# Credentials, they will never be exposed to remote
+gmail_pw.txt

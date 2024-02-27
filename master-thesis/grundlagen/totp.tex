@@ -1,0 +1,49 @@
+Anstatt das Einmalpasswort per SMS oder E-Mail zu empfangen, gibt es die 
+Möglichkeit, es selbst zu berechnen. Somit benötigt man nicht 
+zwingend eine Verbindung zum Mobilfunknetz bzw. zum Internet mit dem Gerät, welches 
+das Einmalpasswort berechnet. Man kann Einmalpasswörter mit dem Verfahren HMAC-based 
+One-time Password (HOTP) oder dem Verfahren Time-based One-time Password (TOTP) 
+erstellen. Sie sind durch den Standard RFC 6238 definiert \autocite{rfc6238}. Der Unterschied ist 
+nur, dass beim HTOP-Verfahren ein Zählwert als Eingabe genutzt wird, der entweder 
+vor der Eingabe bekannt gegeben wird oder nach jeder Nutzung inkrementiert wird, und 
+beim TOTP-Verfahren dagegen ein stetig steigender Wert, nämlich die Unixzeit 
+unterteilt in $n$-Sekunden-Schritte (i.d.R. $n = 30$). Die Unixzeit ist eine Ganzzahl, die die 
+vergangene Zeit seit dem 1.1.1970 um 00:00 Uhr in Sekunden repräsentiert. Im 
+Folgenden werden nur zeitbasierte Einmalpasswörter (abgekürzt mit TOTP) betrachtet, 
+die von Smartphones bzw. den entsprechenden Apps berechnet werden.
+\\\\
+Bei der Einrichtung dieses Verfahrens zeigt der Dienstanbieter dem Nutzer meist 
+einen Quick Response (QR) Code auf seiner Website. Der QR-Code enthält ein Geheimnis, also eine Zeichenfolge, die auch als Shared Secret bezeichnet wird. Der Nutzer scannt den QR-Code mit einer entsprechenden App auf 
+seinem Smartphone. Aus dem Geheimnis und der aktuellen Unixzeit berechnet die App 
+das TOTP, eine meist sechsstellige Zahl. Meldet sich der Nutzer dann erneut beim 
+Dienst an, wird er nach Eingabe des Benutzernamens und des Passworts nach dem TOTP 
+gefragt. Der Nutzer öffnet seine App, liest das TOTP ab und tippt es in den Browser 
+ein. So kann eine solche App mehrere Geheimnisse für jeden Dienst, der das Verfahren 
+unterstützt, speichern und entsprechend die TOTPs berechnen.
+\\\\
+Allerdings bringt auch dieses Verfahren einige Probleme mit sich. Zum einen muss der 
+Nutzer für die Authentisierung erst die App auf seinem Smartphone suchen, öffnen und 
+dann den Account auswählen, bei dem er das TOTP benötigt. Zum anderen muss der 
+Nutzer das TOTP wie beim SMS-Verfahren ablesen und eintippen (fehleranfällig). Hinzu 
+kommt, dass ein TOTP in der App maximal nur für 30~s angezeigt wird und danach ein 
+neues. Wenn eine Person körperlich oder kognitiv nur langsam agieren kann, dann 
+könnten die 30~s nicht ausreichend sein. Dadurch kann sich eine solche Person beim 
+Abtippen des TOTPs unter Druck gesetzt fühlen und anfälliger für Tippfehler werden.
+Des Weiteren gibt es Fälle, in denen das aktuelle TOTP nur noch für kurze Zeit (z.B. 5s) auf dem Display 
+verweilt, bis das neue angezeigt wird. Nutzer warten dann, bis das neue TOTP 
+angezeigt wird, weil die verfügbare Zeit nicht ausreichend gewesen wäre, um es 
+abzulesen und im Browser einzugeben.
+\\\\
+Die Schwachstellen, die es beim SMS-Verfahren gibt, sind hier kein Problem, bis auf 
+das später in Kap. \ref{sec: phishing} (S. \pageref{sec: phishing}) beschriebene Phishing. Das Geheimnis benötigt eine ausreichende 
+Länge, sonst kann es leicht erraten werden. RFC 6238 schreibt keine Mindestlänge 
+vor, aber 32~Byte sind üblich. Ein eher leicht zu lösendes Problem ist, dass die Uhr 
+des Smartphones und des Diensteanbieters synchronisiert sind. Optimalerweise akzeptiert der Dienst nicht nur das aktuelle TOTP, sondern auch das TOTP im Zeitfenster davor und danach. Somit ist ein TOTP effektiv nicht nur 30~s sondern 90~s gültig. Auf diese Weise werden geringe Abweichungen in den Uhren der beiden Parteien ausgeglichen \autocite[7]{rfc6238}.
+\\\\
+Den Ergebnissen aus der Studie von \textcite{Reese} zufolge erreicht die 
+Authentisierung mit den TOTPs eine SUS-Bewertung von $88{,}8$ im Median und $83{,}1$ im 
+arithmetischen Mittelwert. In beiden Größen hat TOTP unter den 
+untersuchten 2FA-Verfahren die beste Bewertung (Passwort ausgenommen), gefolgt vom 
+Push-Verfahren mit rund 81 Punkten in beiden Größen. Bzgl. der Zeitmessung schneiden 
+die TOTPs mit einem Median von $15{,}1~s$ und einem arithmetischen Mittelwert von $23{,}9~s$ 
+eher mittelmäßig bis schlecht ab.

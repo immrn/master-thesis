@@ -1,0 +1,152 @@
+Am Ende der Abschlussveranstaltung hat der Versuchsleiter mit den Probanden ein 
+Interview zur eigentlichen Nutzung von Blue TOTP geführt. Wie bei der Einrichtung 
+lassen sich auch für die Authentisierung die Aussagen der Probanden in 
+Themengebiete unterteilen. Einige Aussagen können kategorisiert und somit 
+statistisch festgehalten werden (siehe Tab. \ref{tab: exit meeting statistic}).
+\\\\
+\paragraph*{Nutzererfahrung}
+\mbox{} \vspace{0.1cm} \\
+Zu Beginn des Interviews wurden die Probanden befragt, wie es ihnen bei der Nutzung 
+von Blue TOTP ergangen ist und welche Probleme aufgetreten sind. Aus den Antworten 
+lässt sich ableiten, dass 6 der 10 Probanden bzgl. der Nutzung eher positiv 
+beeindruckt waren. Ein Proband hat sich gefreut, dass er im Vergleich zum 
+traditionellen Verfahren nicht mehr auf das nächste TOTP warten muss, wenn das 
+aktuelle nur noch wenige Sekunden gültig ist. Ein anderer Proband berichtete, dass 
+er sich die App vollständig angeschaut und die Fallback-Option entdeckt hat. Diese 
+verwendete er an zwei Tagen. Er hat sich dann aber doch wieder für die 
+Bluetooth-Option entschieden, da er feststellte, dass ihm die Anmeldung so viel 
+leichter fällt. Dagegen äußerte ein Proband, dass sich Blue TOTP für ihn nicht 
+lohnt, da Bluetooth an seinem Smartphone für gewöhnlich nie aktiviert ist. Er 
+kritisiert, dass er immer erst Bluetooth aktivieren und dann die beiden Geräte 
+verbinden muss. So würde sich Blue TOTP für ihn nicht lohnen, mitunter 
+weil er bei den meisten Diensten durch Session Cookies sowieso angemeldet bleibt. 
+Auch technische Fehler traten auf, wie z.B. der Bug, dass in der Extension beim 
+Bluetooth-Scan das Smartphone mehrmals angezeigt wurde. Dies geschah, wenn der PC zwischen zwei Verbindungsvorgängen 
+nicht heruntergefahren wurde. Auch kam es vor, dass die App anzeigt, sie sei 
+verbunden, obwohl sie es nicht ist. Ein Proband berichtete, dass er an einem Tag 
+die Extension und App nicht verbinden konnte und dann den Fallback entdeckt und 
+verwendet hat. Neben diesen Schwierigkeiten haben die Probanden einige störende 
+Faktoren zusammengetragen. 5 Probanden hatten am ersten Tag der Nutzungsphase die 
+Reihenfolge vertauscht, wie sie vorgehen müssen. Sie haben zuerst Benutzername und 
+Passwort auf der Website eingegeben und dann realisiert, dass sie vorher App und 
+Extension verbinden müssen und nicht nachher. D.h. sie mussten die Website erneut 
+aufrufen und wieder Benutzername und Passwort eingeben. Erst dann sahen sie die 
+Notification auf dem Smartphone. Zwei Probanden berichteten, dass ihnen der Scan zu 
+lang dauert. Hier sei erwähnt, dass es teilweise bis zu $5~s$ oder länger dauern kann, bis die Extension das Smartphone gefunden hat. Hinsichtlich der App 
+kritisieren zwei Probanden, dass man die dauerhafte Notification (Android 
+Foreground Service) nicht wegwischen konnte (abhängig von Hersteller und Android Version).
+\\\\
+\paragraph*{Nutzungsverhalten}
+\mbox{} \vspace{0.1cm} \\
+Des Weiteren wurden die Probanden gefragt, unter welchen Bedingungen sie Blue TOTP 
+gern nutzen würden. Zuerst wurde die Frage gestellt, inwiefern sie Blue TOTP bei 
+einem Dienst nutzen würden, der ihnen freistellt, ob sie einen Zwei-Faktor-Schutz 
+verwenden wollen. 8 Probanden würden dafür Blue TOTP verwenden, aber einige 
+unterscheiden zwischen sicherheitsrelevanten und nicht sicherheitsrelevanten 
+Diensten. 4 Probanden würden es nur bei sicherheitsrelevanten Diensten nutzen. Ein 
+Proband gab sogar an, es nur bei nicht sicherheitsrelevanten Diensten nutzen zu 
+wollen, weil er bspw. beim Banking das Gefühl hat, dass ein Gerät ohne 
+Internetzugang sicherer ist. Danach wurde die Frage analog zu dem Fall gestellt, 
+wenn der Dienst die Probanden zwingen würde, einen Zwei-Faktor-Schutz zu nutzen. 7 
+Teilnehmer gaben an, diese Aufforderung eher zu akzeptieren, wenn sie Blue TOTP 
+nutzen dürften. Einige begründeten ihre Aussagen damit, dass Blue TOTP im Vergleich 
+zum trad. TOTP für sie einfacher und schneller in der Nutzung sein. Eine weitere 
+Frage war, wie die Probanden bei der Anmeldung vorgegangen sind. Die Frage zielt darauf ab, 
+ob sie erst die Website aufrufen oder erst die Extension und App miteinander verbinden. 
+Teilweise sind sie von Tag zu Tag unterschiedlich vorgegangen, d.h. beide Fälle kamen vor. Von 
+Interesse war auch, wie die Probanden Bluetooth vor und während der Studie genutzt 
+haben: War es immer aktiviert oder wurde es nur dann aktiviert, wenn man es braucht? 
+Die Antworten sind in Tab. \ref{tab: exit meeting statistic} zu sehen unter \glqq 
+Bluetooth im PC/Smartphone vor/während/ der Studie\grqq{}.
+\begin{table}
+    \begin{center}
+    \resizebox{0.7\textwidth}{!}{%
+    \begin{tabular}{| l | r | c |}
+        \hline
+        \textbf{Kriterium} & \textbf{Antwort} & \textbf{Anzahl} \\
+        \hline \hline
+        \multirow{3}{*}{\parbox{0.4\linewidth}{Empfinden über Zeitaufwand\\(Blue TOTP vs. trad. TOTP)}} & schneller & 6 \\
+        & gleich schnell & 2 \\
+        & langsamer & 2 \\
+        \hline
+        \multirow{3}{*}{\parbox{0.4\linewidth}{Empfinden über  Nutzerfreundlichkeit\\(Blue TOTP vs. trad. TOTP)}} & besser & 5 \\
+        & gleich & 3 \\
+        & keine Angabe & 2 \\
+        \hline
+        \multirow{2}{*}{\parbox{0.4\linewidth}{Überwiegt Aufwand oder Nutzen}} & Nutzen & 9 \\
+        & Aufwand & 1 \\
+        \hline
+        \multirow{2}{*}{\parbox{0.4\linewidth}{Mind. 1x die Hintergrund-Funktionalität der App genutzt}} & Ja & 4 \\
+        & Nein & 6 \\
+        \hline
+        \multirow{2}{*}{\parbox{0.4\linewidth}{Bluetooth im PC vor der Studie}} & immer aktiviert & 7 \\
+        & nur aktiviert, wenn gebraucht & 3 \\
+        \hline
+        \multirow{2}{*}{\parbox{0.4\linewidth}{Bluetooth im PC während der Studie}} & immer aktiviert & 9 \\
+        & nur aktiviert, wenn gebraucht & 1 \\
+        \hline
+        \multirow{2}{*}{\parbox{0.4\linewidth}{Bluetooth im Smartphone\\vor der Studie}} & immer aktiviert & 1 \\
+        & nur aktiviert, wenn gebraucht & 9 \\
+        \hline
+        \multirow{2}{*}{\parbox{0.4\linewidth}{Bluetooth im Smartphone\\während der Studie}} & immer aktiviert & 2 \\
+        & nur aktiviert, wenn gebraucht & 8 \\
+        \hline
+        \multirow{3}{*}{\parbox{0.4\linewidth}{Bevorzugung}} & Blue TOTP & 7 \\
+        & beides gleichermaßen & 2 \\
+        & trad. TOTP & 1 \\
+        \hline
+    \end{tabular}}
+    \end{center}
+    \caption[Statistische Ergebnisse der abschließenden Interviews]{Statistische Ergebnisse der abschließenden Interviews über den Anmeldungsprozess mit Blue TOTP bzw. mit dem trad. TOTP; Die Anzahl sagt aus wie viele Probanden der Studie zu einer Antwort tendieren}
+    \label{tab: exit meeting statistic}
+\end{table}
+Es ist zu sehen, dass zwei von potenziell drei Probanden ihr Verhalten geändert 
+haben, bzgl. der Sache, ob sie Bluetooth am Computer immer aktiviert lassen, 
+anstatt es nach dem Gebrauch wieder zu deaktivieren. Analog zum Smartphone hat nur 
+einer von potentiell 9 Probanden sein Verhalten geändert und Bluetooth immer 
+aktiviert gelassen. Er meinte, dass die Nutzung von Blue TOTP für ihn so am 
+angenehmsten sei.
+
+\paragraph*{Präferenz}
+\mbox{} \vspace{0.1cm} \\
+Außerdem wurden die Probanden hinsichtlicher ihrer Präferenzen befragt. Zum einen 
+gab es die Frage, welches System (Blue TOTP oder traditionelles TOTP) sie 
+bevorzugen und ob bei ihnen bzgl. Blue TOTP der Aufwand (umfasst auch die 
+Einrichtung) oder der Nutzen überwiegt. Die Ergebnisse sind in 
+Tab. \ref{tab: exit meeting statistic} zu sehen. Ein Proband meinte, für ihn überwiege der Aufwand dem 
+Nutzen. Das lag daran, dass es ihn störte, nur für eine Anmeldung Bluetooth am 
+Smartphone zu aktivieren und das Smartphone mit der Extension zu verbinden. $70\%$ 
+der Probanden bevorzugen Blue TOTP gegenüber dem traditionellen TOTP, weil es ihrer 
+Wahrnehmung nach schneller oder nutzerfreundlicher ist (siehe auch 
+Tab. \ref{tab: exit meeting statistic} \glqq Empfinden über Zeitaufwand/
+Nutzerfreundlichkeit\grqq{}). Zusätzlich wurde den Probanden erklärt, dass Blue 
+TOTP versucht, schneller und einfacher in der Handhabung zu sein, aber dass es auch 
+entgegen anderer 2FA-Verfahren Phishing-resistent ist. Bei der Frage, welche 
+Eigenschaft ihnen bei Blue TOTP wichtiger ist, stimmten 6 Probanden für die 
+Sicherheit und 3 für die schnellere Handhabung sowie gesteigerte 
+Nutzerfreundlichkeit.
+
+\paragraph*{Technisches}
+\mbox{} \vspace{0.1cm} \\
+Bezüglich des Energieverbrauchs auf dem Smartphone konnte kein Proband einen 
+Unterschied erkennen, inwiefern der Akku sich schneller mit der (im Hintergrund) aktiven Blue TOTP App 
+entladen hat. Da die App im Hintergrund lief, wurden die Teilnehmer auch gefragt, 
+ob sie bemerkt haben, dass die App immer aktiv ist (solange Android sie nicht 
+beendet) und ob sie die App teilweise auch nicht geöffnet haben, um die Extension 
+und die App zu verbinden. 4 Probanden machten mind. einmal Gebrauch von der  
+Hintergrund-Funktionalität.
+
+\paragraph*{Änderungsvorschläge}
+\mbox{} \vspace{0.1cm} \\
+Drei Probanden wünschen sich, dass das TOTP automatisch bestätigt wird, nachdem es 
+von der Extension automatisch in das Eingabeelement eingefügt wurde. Auf Nachfrage 
+haben es nahezu alle Teilnehmer befürwortet, wenn sich Extension und App 
+automatisch verbinden würden. Die Stimmen dagegen meinten, dass sie sich unwohl 
+fühlen würden (vermutlich ein Gefühl von Kontrollverlust). Ein Proband merkte an, 
+dass es egal sein sollte, ob man erst Benutzername und Passwort eingibt und dann 
+die Extension mit der App verbindet oder andersrum. Das bestätigt auch die 
+Erkenntnis beim Nutzungsverhalten, da viele Teilnehmer den Fehler (erst 
+Benutzername \& Passwort, dann Bluetooth-Verbindung) am ersten Tag machten. Ein 
+Teilnehmer wünscht sich, dass sich die Extension von selbst öffnet, sobald man sie 
+braucht (in Chrome ist dies technisch nicht möglich). Es ist ein helles Design für 
+die Extension gewünscht.

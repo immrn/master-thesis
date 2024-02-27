@@ -1,0 +1,327 @@
+\documentclass[doktyp=marbeit, twoside]{TUBAFarbeiten}
+
+\usepackage[ngerman,english]{babel}
+
+\usepackage{selinput}% Auswahl der Dateikodierung (ansi,latin1,utf8,...)
+	\SelectInputMappings{adieresis={ä},germandbls={ß},Euro={€}}% Zeichenzuordnung für selinput.sty
+\usepackage[T1]{fontenc}% Einstellung Fontencoding
+
+\usepackage{csquotes}% Einstellung zu Anführungszeichen; wird von biblatex.sty gefordert
+\usepackage[backend=biber,style=authoryear-comp,sorting=nyt,sortlocale=de_DE_phonebook]{biblatex}% bessere Literaturverarbeitung
+\addbibresource{literaturquellen.bib}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[table,figure]{hypcap}
+\hyphenchar\font=\string"7F
+
+\usepackage{tabularx,diagbox}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{subcaption}
+
+\usepackage{amsmath}
+\usepackage{acronym}
+
+\usepackage{listings}
+\definecolor{gray}{rgb}{0.95,0.95,0.95}
+\definecolor{violet}{rgb}{0.5, 0.0, 0.6}
+\lstset{ basicstyle=\ttfamily\small, backgroundcolor=\color{gray} }
+\lstset{ numbers=left, numberstyle=\tiny, numbersep=2pt }
+\lstset{ breaklines=true, keywordstyle=\color{violet} }
+
+%\usepackage{setspace}% Einstellungen Zeilenabstand
+	%\onehalfspacing% Einstellungen Zeilenabstand
+
+\setcounter{secnumdepth}{4}
+% \setcounter{tocdepth}{4}
+
+% Worttrennung für nicht bekannte Wörter
+\input{hyphenation.tex}
+
+
+\TUBAFFakultaet{Fakultät für Mathematik und Informatik}
+\TUBAFInstitut{Institut für Informatik}
+\TUBAFLehrstuhl{Professur für Ubiquitous Computing and Smart Systems}
+
+%\TUBAFZweitlogo{\includegraphics{thekla_logo.jpg}}
+
+\TUBAFTitel[Verbesserung der Benutzbarkeit und Sicherheit von Time-based One-time Passwords]{Verbesserung der Benutzbarkeit und Sicherheit gegen Man-In-The-Middle-Phishing von Time-based One-time Passwords}
+\TUBAFBetreuer{\,Prof. \,Dr. Bastian Pfleging}
+\TUBAFKorrektor{\,Prof. \,Dr. Florian Alt}
+\TUBAFAutor[M. Käsemodel]{Marian Andreas Käsemodel}
+\TUBAFStudiengang{Angewandte Informatik}
+\TUBAFVertiefung{Technik}
+\TUBAFMatrikel{62\,412}
+\TUBAFDatum[]{\today}
+
+\begin{document}
+
+\maketitle
+
+\TUBAFErklaerungsseite
+
+
+\KOMAoptions{
+	listof=totoc	% Abbildungs- und Tabellenverzeichnis im Inhaltsverzeichnis
+}
+
+\begin{abstract}
+    \input{intro/abstract.tex}
+\end{abstract}
+\newpage
+
+\tableofcontents
+\newpage
+\input{acronyme.tex}
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+\newpage
+\section{Einführung}
+	\label{sec: einfuhrung}
+
+	\subsection{Problemstellung}
+		\label{sec: problemstellung}
+        \input{intro/problemstellung.tex}
+
+    \subsection{Ziel der Arbeit}
+        \label{sec: ziel der arbeit}
+        \input{intro/zielstellung.tex}
+
+    \subsection{Aufbau der Arbeit}
+        \label{sec: aufbau der arbeit}
+        \input{intro/aufbau_der_gliederung.tex}
+
+\newpage
+\section{Grundlagen und verwandte Arbeiten}
+    \label{sec: grundlagen}
+    \input{grundlagen/intro.tex}
+
+    \subsection{Zwei-Faktor-Authentisierung}
+        \label{sec: 2fa}
+        \input{grundlagen/2fa.tex}
+    
+    \subsection{Verfahren der Zwei-Faktor-Authentisierung}
+        \label{sec: verfahren der 2fa}
+        \input{grundlagen/verfahren_der_2fa.tex}
+
+        \subsubsection{Vorab generierte Codes}
+        \label{sec: codes}
+        \input{grundlagen/codes.tex}
+
+        \subsubsection{Einmalpasswörter über SMS}
+        \label{sec: sms}
+        \input{grundlagen/sms.tex}
+
+        \subsubsection{Zeitbasierte Einmalpasswörter}
+        \label{sec: totp}
+        \input{grundlagen/totp.tex}
+
+        \subsubsection{Push-Benachrichtigung}
+        \label{sec: push}
+        \input{grundlagen/push.tex}
+
+        \subsubsection{Universal Second Factor}
+        \label{sec: u2f}
+        \input{grundlagen/u2f.tex}
+
+        \subsubsection{Zusammenfassung}
+        \label{sec: zusammenfassung verfahren}
+        \input{grundlagen/zusammenfassung.tex}
+
+    \subsection{Phishing gegen den Zwei-Faktor-Schutz}
+        \label{sec: phishing}
+        \input{grundlagen/phishing.tex}
+
+    \subsection{Passkeys}
+        \label{sec: passkeys}
+        \input{grundlagen/passkeys.tex}
+
+    \subsection{Verwandte Arbeiten}
+        \label{sec: verwandte arbeiten}
+        \input{grundlagen/verwandte_arbeiten.tex}
+
+    \subsection{Zusammenfassung}
+        \label{sec: grundlagen zusammenfassung}
+        \input{grundlagen/zusammenfassung_allg.tex}
+
+
+\newpage
+\section{Verbesserung von Time-based One-time Passwords}
+    \label{sec: verbesserung von totps}
+    \input{verbesserung_von_totp/intro.tex}
+
+    \subsection{Herleitung des Konzepts}
+        \label{sec: herleitung konzept}
+        \input{verbesserung_von_totp/herleitung_konzept.tex}
+
+    \subsection{Konzept zur Verbesserung von Time-based One-time Passwords}
+        \label{sec: funktionsweise konzept}
+        \input{verbesserung_von_totp/konzept.tex}
+
+        \subsubsection{Einrichtung}
+            \label{sec: konzept einrichtung}
+            \input{verbesserung_von_totp/konzept_einrichtung.tex}
+        \subsubsection{Authentisierungsvorgang}
+            \label{sec: konzept authentisierungsvorgang}
+            \input{verbesserung_von_totp/konzept_login.tex}
+        \subsubsection{Alternativer Authentisierungsvorgang (Fallback)}
+            \label{sec: konzept fallback}
+            \input{verbesserung_von_totp/konzept_fallback.tex}
+
+    \subsection{Forschungsfragen \& Forschungsansatz}
+        \label{sec: forschungsansatz}
+        \input{verbesserung_von_totp/forschungsansatz.tex}
+
+\newpage
+\section{Implementierung}
+    \label{sec: implementierung}
+    \input{implementierung/intro.tex}
+
+    \subsection{Kommunikationsarchitektur}
+        \label{sec: implementierung architektur}
+        \input{implementierung/architektur.tex}
+
+    \subsection{Smartphone Application}
+        \label{sec: implementierung app}
+        \input{implementierung/app.tex}
+
+    \subsection{Browser-Extension}
+        \label{sec: implementierung ext}
+        \input{implementierung/ext.tex}
+
+    \subsection{Webdienst}
+        \label{sec: implementierung webservice}
+        \input{implementierung/webservice.tex}
+
+\newpage
+\section{Studie}
+    \label{sec: studie}
+    \input{studie/einleitung.tex}
+
+    \subsection{Studiendesign}
+        \label{sec: studie studiendesign}
+        \input{studie/studiendesign.tex}
+
+    \subsection{Probanden}
+        \label{sec: studie probanden}
+        \input{studie/probanden.tex}
+
+    \subsection{Apparat}
+        \label{sec: studie apparat}
+        \input{studie/apparat.tex}
+
+    \subsection{Ablauf}
+        \label{sec: studie prozedur}
+        \input{studie/prozedur.tex}
+
+        \subsubsection{Einführung}
+            \label{sec: studie prozedur einfuerung}
+            \input{studie/prozedur_einfuerung.tex}
+
+        \subsubsection{6-tägige Nutzungsphase}
+            \label{sec: studie prozedur phase}
+            \input{studie/prozedur_phase.tex}
+
+        \subsubsection{Abschluss}
+            \label{sec: studie prozedur abschluss}
+            \input{studie/prozedur_abschluss.tex}
+        
+\newpage
+\section{Ergebnisse der Studie}
+    \label{sec: ergebnisse studie}
+    \input{ergebnisse/intro.tex}
+
+    \subsection{Einrichtung}
+        \label{sec: ergebnisse studie einrichtung}
+        \input{ergebnisse/setup_intro.tex}
+
+        \subsubsection{Einrichtungszeit}
+            \label{sec: ergebnisse studie einrichtungszeit}
+            \input{ergebnisse/setup_time.tex}
+
+        \subsubsection{User Experience Questionaire}
+            \label{sec: ergebnisse studie ueq}
+            \input{ergebnisse/setup_ueq.tex}
+        
+        \subsubsection{System Usability Scale}
+            \label{sec: ergebnisse studie sus}
+            \input{ergebnisse/setup_sus.tex}
+
+        \subsubsection{Beobachtungen}
+            \label{sec: ergebnisse studie beobachtungen}
+            \input{ergebnisse/setup_beobachtungen.tex}
+
+        \subsubsection{Interview}
+            \label{sec: ergebnisse studie interview}
+            \input{ergebnisse/setup_interview.tex}
+
+    \subsection{Authentisierung}
+        \label{sec: ergebnisse studie authentisierung}
+        \input{ergebnisse/auth_intro.tex}
+
+        \subsubsection{Authentisierungszeit}
+            \label{sec: ergebnisse studie auth time}
+            \input{ergebnisse/auth_time.tex}
+
+        \subsubsection{User Experience Questionnaire}
+            \label{sec: ergebnisse studie auth ueq}
+            \input{ergebnisse/auth_ueq.tex}
+        
+        \subsubsection{System Usability Scale}
+            \label{sec: ergebnisse studie auth sus}
+            \input{ergebnisse/auth_sus.tex}
+
+        \subsubsection{Interview}
+            \label{sec: ergebnisse studie auth interview}
+            \input{ergebnisse/auth_interview.tex}
+    
+\newpage
+\section{Diskussion der Studie}
+    \label{sec: diskussion}
+    \input{diskussion/intro.tex}
+
+    \subsection{Einrichtung}
+        \label{sec: diskussion einrichtung}
+        \input{diskussion/einrichtung.tex}
+
+    \subsection{Authentisierung}
+        \label{sec: diskussion auth}
+        \input{diskussion/authentisierung.tex}
+
+    \subsection{Limitierungen}
+        \label{sec: diskussion limit}
+        \input{diskussion/limit.tex}
+
+    \subsection{Empfehlungen für die weitere Entwicklung und Forschung}
+        \label{sec: diskussion empfehlung}
+        \input{diskussion/empfehlung.tex}
+
+\newpage
+\section{Zusammenfassung \& Ausblick}
+    \subsection{Zusammenfassung}
+        \label{sec: outro zusammenfassung}
+        \input{outro/zusammenfassung.tex}
+
+    \subsection{Ausblick}
+        \label{sec: outro ausblick}
+        \input{outro/ausblick.tex}
+
+\newpage
+\printbibliography[title=Literaturverzeichnis, heading=bibintoc]
+
+\newpage
+\appendix
+\addcontentsline{toc}{section}{Anhang}
+\section{Allgemein}
+    \input{anhang/extension_screens.tex}
+\newpage
+    \section{Materialien der Studie}
+    \input{anhang/interview.tex}
+\newpage
+\section{Ergebnisse der Studie}
+    \input{anhang/times_sus_ueq_tables.tex}    
+
+\end{document}

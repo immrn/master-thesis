@@ -1,0 +1,9 @@
+linewidth = 1.05
+linecolor = "black"
+dpi = 300
+
+[col]
+blue = "#a2d8fc"
+blue_sec = "#4558ff"
+trad = "#ffd666"
+trad_sec = "#cc8f27"

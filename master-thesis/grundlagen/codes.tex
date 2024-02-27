@@ -1,0 +1,29 @@
+Bei diesem Verfahren generiert der Dienstanbieter vorab einige Codes und lässt sie 
+dem Nutzer zukommen (Email, Papierform, direkte Anzeige der Codes nach Einrichtung 
+des Verfahrens). Diese Codes sind jeweils nur eine zufällige Zeichenabfolge, die im 
+besten Fall nur einmal gültig ist. Bei der Anmeldung gibt der Nutzer nach Eingabe 
+des Benutzernamens und des Passworts einen der Codes ein und ist erfolgreich 
+angemeldet. Den verwendeten Code kann er dann verwerfen.
+\\\\
+Das Prinzip ist einfach aufgebaut (Code ablesen, eintippen und von der Liste streichen), aber es gibt einige Schwachstellen. Die Codes müssen  auf beiden 
+Seiten sicher verwahrt sein. Der Anbieter kann die Codes sicher hashen, doch der 
+Nutzer muss sie entweder in Papierform verwahren (im Klartext) oder in einer Datei 
+(bestenfalls verschlüsselt) speichern. Außerdem sind die Codes so lange gültig, bis 
+der Nutzer sie verwendet. D.h. mittels Brute-Force-Attacken, kann ein Angreifer den 
+Code erraten. Aus diesem Grund sollten die Codes auch eine ausreichende Anzahl an 
+Zeichen zählen. Das wiederum erfordert, dass der Nutzer bei der Eingabe des Codes 
+viele Zeichen ablesen und eintippen muss. Dadurch steigt die Fehleranfälligkeit und 
+der Zeitaufwand bei der Eingabe. Außerdem besteht ein Problem, wenn der Nutzer die 
+Codes verliert bzw. versehentlich löscht, ohne Sicherheitskopien angelegt zu haben. \autocite[359 \psq]{Reese}
+\\\\
+Nach der Studie von \textcite{Reese} haben die generierten Codes bei der 
+Authentisierung (nicht der Einrichtung) einen Medianwert von 80 und einen 
+arithmetischen Mittelwert von $80{,}2$ in der SUS-Bewertung. Somit 
+liegen sie im Vergleich zu den anderen untersuchten 2FA-Verfahren im mittleren 
+Bereich. Zeitlich haben sie den größten Aufwand mit einem Median von $17{,}2~s$ und einem 
+arithmetischen Mittelwert von $28~s$. Ob die Teilnehmer ihr 
+benötigtes Mittel (hier die Codes) für den Zweiten-Faktor-Schritt bereits vor der 
+Anmeldung bereitliegen hatten, wurde in der Studie nicht unterschieden. D.h. bei den 
+gemessenen Zeiten ist stets unklar, ob und wie viel Zeit für das Beschaffen des 
+Mittels benötigt wurde \autocite[364]{Reese}. Auch wurde nicht erwähnt, wie viele Zeichen jeder 
+Code enthält.

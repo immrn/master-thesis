@@ -1,0 +1,15 @@
+Neben den Grundlagen bekannter 2FA-Verfahren wurden deren Probleme erörtert, wie die Anfälligkeit 
+gegen Phishing oder schlechte Gebrauchstauglichkeit. Auch wurden Forschungsarbeiten zum Thema 
+vorgestellt, die versuchen, 2FA neu zu denken. Passkeys stellen die gesamte 
+Zwei-Faktor-Authentisierung in Frage und scheinen eine gute Idee für zukünftige Systeme zu sein. 
+Sie könnten deutlich mehr verbreitet sein. Allerdings sind Benutzernamen und Passwörter tief 
+verankert und nicht von heute auf morgen wegzudenken. Genauso wenig kann man jeden Webdienst und 
+jeden Nutzer dazu zwingen, sich auf \glqq das eine Verfahren\grqq{} zu beschränken.
+\\\\
+Die im weiteren Verlauf vorgestellte Verbesserung von TOTPs unterscheidet sich dahingehend von 
+den bestehenden Systemen und entwickelten Ansätzen, dass sie nahe am TOTP-Verfahren bleibt. 
+Letztlich geht es darum, das TOTP automatisch und möglichst mit wenig Nutzerinteraktionen zur 
+Website zu transportieren. Dabei soll ein lokales Bluetooth-Netzwerk verwendet werden, ohne dass 
+Geheimnisse bei einem Drittanbieter gespeichert werden. Das TOTP bleibt immer noch Bestandteil, 
+doch nur im Hintergrund, und kann für eine Fallback-Option nützlich sein. Außerdem hat das später 
+vorgestellte Konzept einen Phishing-Schutz für den zweiten Faktor.

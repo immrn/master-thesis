@@ -1,0 +1,27 @@
+item,mean,variance,std,no,left,right,scale
+1,0.4,1.6,1.3,10,unerfreulich,erfreulich,Attraktivität
+2,1.4,1.4,1.2,10,unverständlich,verständlich,Durchschaubarkeit
+3,-0.4,1.8,1.3,10,phantasielos,kreativ,Originalität
+4,1.5,1.6,1.3,10,schwer ...,leicht zu lernen,Durchschaubarkeit
+5,1.1,1.2,1.1,10,minderwertig,wertvoll,Stimulation
+6,-0.2,0.4,0.6,10,langweilig,spannend,Stimulation
+7,-0.2,1.3,1.1,10,uninteressant,interessant,Stimulation
+8,0.9,1.7,1.3,10,unberechenbar,voraussagbar,Steuerbarkeit
+9,0.6,2.0,1.4,10,langsam,schnell,Effizienz
+10,-0.3,2.2,1.5,10,konventionell,originell,Originalität
+11,0.1,1.4,1.2,10,behindernd,unterstützend,Steuerbarkeit
+12,0.8,1.1,1.0,10,schlecht,gut,Attraktivität
+13,0.2,1.7,1.3,10,kompliziert,einfach,Durchschaubarkeit
+14,-0.3,0.2,0.5,10,abstoßend,anziehend,Attraktivität
+15,-0.2,1.3,1.1,10,herkömmlich,neuartig,Originalität
+16,0.2,1.3,1.1,10,unangenehm,angenehm,Attraktivität
+17,1.8,0.6,0.8,10,unsicher,sicher,Steuerbarkeit
+18,0.3,1.1,1.1,10,einschläfernd,aktivierend,Stimulation
+19,0.8,0.6,0.8,10,nicht erw.,erwartungskonform,Steuerbarkeit
+20,0.7,1.1,1.1,10,ineffizient,effizient,Effizienz
+21,0.8,1.7,1.3,10,verwirrend,übersichtlich,Durchschaubarkeit
+22,0.8,1.1,1.0,10,unpragmatisch,pragmatisch,Effizienz
+23,0.7,0.7,0.8,10,überladen,aufgeräumt,Effizienz
+24,-0.1,0.8,0.9,10,unattraktiv,attraktiv,Attraktivität
+25,0.4,0.5,0.7,10,unsympathisch,sympathisch,Attraktivität
+26,0.4,1.8,1.3,10,konservativ,innovativ,Originalität

@@ -1,0 +1,10 @@
+cleaned by IQR:
+- upper limit: 31.3131305
+- count of removed values: 6
+- mean: 10.055600188679247
+
+cleanded by 2 * STD:
+- upper limit: 57.43170809206893
+- count of removed values: 3
+- mean: 11.837041839285714
+

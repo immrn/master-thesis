@@ -1,0 +1,62 @@
+Für die weitere Forschung wird empfohlen, zunächst die Fehler von Blue TOTP zu 
+beheben und einigen Änderungsvorschlägen der Probanden nachzukommen.
+
+\paragraph*{Entwicklung von Blue TOTP (Einrichtung)}
+\mbox{} \vspace{0.1cm} \\
+Besonders die Einrichtung kann optimiert werden. Es sollte der gesamte Ablauf 
+der Einrichtung überdacht werden. Dabei sollte es keine Rolle spielen, von 
+welchem Punkt der Nutzer startet. Blue TOTP ist momentan so konzipiert, dass 
+es dem Nutzer alles erklärt, was zu tun ist, bevor er den QR-Code scannen 
+darf. Aber die Studie hat eindeutig gezeigt, dass es nicht nötig ist. Der 
+Ausgangspunkt, dass ein Nutzer bereits die 2FA-Einrichtung auf einer Website 
+gestartet hat, verlangt, dass Blue TOTP keine Anleitungen mehr dazu liefert, 
+sondern ihn direkt den QR-Code scannen lässt und ihn dann bspw. in der App 
+(und nicht in der Extension) fragt, wie sein Benutzername lautet. Der 
+Benutzername kann dort ebenfalls schon vorausgefüllt sein, falls die Extension 
+einen erkannt hat. Es ist auch eine Überlegung wert, die Anleitung nicht nur 
+zu kürzen, sondern das, was davon noch übrig ist, gänzlich auf dem Smartphone 
+anzuzeigen, da der Nutzer ohnehin die App fokussiert. Das lässt sich auch gut 
+mit dem nächsten Punkt, dem automatischen Wiederverbinden, kombinieren. Die 
+Extension hätte dann aus Nutzersicht nur die Hauptfunktion, vor der ersten 
+Verbindung zwischen App und Extension nach dem Smartphone zu scannen, so dass 
+der Nutzer es auswählt. Idealerweise führt der Nutzer noch einmalig Schritte 
+durch, die die Verbindung auch tatsächlich authentisieren und sicher machen (z.
+B. einen QR-Code in der Extension scannen o.ä.). Ist die automatische 
+Wiederverbindung implementiert, dann kann die Extension wirklich umfungiert 
+werden, so dass der Nutzer sie für die Einrichtung eines 2FA-Verfahrens 
+überhaupt nicht benötigt. Es ist evtl. vorteilhaft, wenn Blue TOTP 
+kommuniziert, dass es mit Bluetooth funktioniert und diese Verbindung sicher/
+Ende-zu-Ende-verschlüsselt ist und es sicherer als andere 2FA-Verfahren ist 
+(zumindest die nicht Phishing-resistenten).
+
+\paragraph*{Entwicklung von Blue TOTP (Authentisierung)}
+\mbox{} \vspace{0.1cm} \\
+Auch wenn dann eine automatische Wiederverbindung implementiert ist, sollte es 
+für den Nutzer möglich sein, erst Benutzername und Passwort einzugeben und 
+dann zu realisieren, dass er Bluetooth auf seinem Smartphone oder Computer 
+aktivieren muss, damit sich Extension und App verbinden. Einige Teilnehmer 
+hatten vorgeschlagen, dass das TOTP, nachdem es automatisch in die Website 
+übertragen wurde, automatisch bestätigt wird. Im Hinblick auf einen neuen 
+Standard für TOTPs wie es das Konzept in Kap. \ref{sec: funktionsweise 
+konzept} vorschlägt, könnte man überlegen, das TOTP-Eingabeelement gänzlich zu 
+entfernen und für einen evtl. Fallback zu verwenden. Wie bereits am Ende des 
+Kap. \ref{sec: konzept fallback} angesprochen, sollte auch die 
+Sicherheitslücke im Konzept geschlossen werden, die die Unwissenheit des 
+Nutzers ausnutzt, und ihn mit einem eigenen QR-Code für den Fallback zur 
+Preisgabe seines TOTPs bringt. Auch der Fallback von Blue TOTP sollte dann 
+eine Lösung finden, Phishing-resistent und nutzerfreundlich zu sein. Des Weiteren sollte eine Lösung gefunden werden, wie man auf bessere Art und Weise einen Hintergrundprozess dauerhaft auf dem Smartphone betreibt (zumindest für Android, zu iOS kann keine Aussage gemacht werden). 
+
+\paragraph*{Forschung}
+\mbox{} \vspace{0.1cm} \\
+Für die Forschung wird empfohlen, nach der Weiterentwicklung von Blue TOTP, 
+die Studie ähnlich durchzuführen. Dabei sollte eine zweite Gruppe an Probanden 
+rekrutiert werden, die das traditionelle TOTP-Verfahren testet und vor allem 
+Messwerte zur Einrichtungs- sowie Authentisierungszeit liefert. Bei der neuen 
+Studie sollte vorher festgelegt werden, ob die Fallback-Option von Blue TOTP 
+entfernt wird oder ob man stattdessen in allen Software-Komponenten die 
+Nutzerinteraktionen protokolliert. So könnte man später ggf. Anmeldungen, die 
+mit dem Fallback getätigt wurden, aus Ergebnissen entfernen.
+Es könnte auch ratsam sein die Studie länger durchzuführen, z.B. für zwei 
+Wochen, um zu sehen, ab welchen Wert es für die Authentisierungszeit eine 
+Sättigung gibt, wenn es darum geht, ob Nutzer durch die tägliche Verwendung 
+schneller in der Handhabung von Blue TOTP werden.

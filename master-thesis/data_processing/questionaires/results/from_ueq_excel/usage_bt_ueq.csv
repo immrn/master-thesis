@@ -1,0 +1,7 @@
+scale,mean,std,n,confidence,ci_low,ci_high
+Attraktivität,1.017,0.682,10,0.423,0.594,1.440
+Durchschaubarkeit,1.325,0.858,10,0.532,0.793,1.857
+Effizienz,1.200,0.695,10,0.431,0.769,1.631
+Steuerbarkeit,1.250,0.565,10,0.350,0.900,1.600
+Stimulation,0.800,0.621,10,0.385,0.415,1.185
+Originalität,1.225,0.795,10,0.492,0.733,1.717

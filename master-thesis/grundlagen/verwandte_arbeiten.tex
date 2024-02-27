@@ -1,0 +1,76 @@
+Die Problemstellung, dass bis auf FIDO-basierte Verfahren die 2FA anfällig für Phishing ist, ist 
+nicht neu und dennoch existiert sie. Nicht jeder Nutzer möchte bspw. einen Security Key, da er 
+ihn die meiste Zeit bei sich tragen muss. Genauso gibt es immer noch viele Websites, die 
+Phishing-anfällige Verfahren wie TOTP oder Push nutzen und teilweise nicht einmal die 
+Phishing-resistenten Alternativen anbieten. Man handelt nach der Devise \glqq Ein lückenhafter 
+Schutz ist besser als gar kein Schutz\grqq{}, und im ersten Augenblick mag diese Behauptung 
+stimmen. Aber in Wahrheit verschiebt sich die Angriffsfläche nur: weg von Brute-Force- und 
+Wörterbuch-Angriffen (usw.) hin zum Real-time Phishing.
+\\\\
+2FA-PP steht für 2FA Phishing Prevention und wird in der Arbeit von \textcite{2FAPP} vorgestellt. Es ist ein 
+Phishing-resistentes 2FA-Verfahren, bei dem der Browser als zu vertrauende Partei angesehen wird. 
+Es kann unter anderem mit One-time Passwords (OTP) kombiniert werden. Es nutzt die Web Bluetooth 
+API, damit die Website über den Browser mit dem Smartphone kommuniziert. Nachdem der Nutzer 
+seinen Benutzernamen und sein Passwort eingegeben hat, verifiziert die Website diese und sendet 
+einen verschlüsselten Javascript-Code an den Browser. Der Browser verlangt vom Smartphone den 
+Schlüssel. Das Smartphone sendet den Schlüssel und beginnt eine Zeitmessung. Der Browser erhält 
+den Schlüssel, entschlüsselt den Javascript-Code und führt ihn aus. Er sendet das Ergebnis des 
+ausgeführten Codes zurück ans Smartphone, das wiederum die Zeitmessung stoppt. Ist das erhaltene 
+Ergebnis gültig und die Zeitmessung kleiner als ein bestimmter Grenzwert, gibt das Smartphone der 
+Website direkt die Bestätigung, dass der zweite Faktor verifiziert wurde oder das Smartphone 
+zeigt bspw. das OTP an, das der Nutzer dann in die Website eintippt. Die Idee scheint 
+vielversprechend, da der Nutzer im Idealfall nur Benutzername und Passwort eingeben muss, alles 
+2FA-spezifische geschieht im Hintergrund. Problematisch könnte hier allerdings der Fakt sein, 
+dass das Smartphone einen Schlüssel an den Browser sendet. Das Senden von privaten Schlüsseln ist eine 
+schlechte Praxis \autocite{DIGI}. Außerdem ist auch das Stoppen der Zeit fragwürdig. Der 
+Mechanismus basiert darauf, dass der Javascript-Code von einem Angreifer nicht in der kurzen Zeit 
+entschlüsselt werden und ausgeführt werden kann. Sollte der Angreifer den Schlüssel erlangen, ist 
+dieser Mechanismus hinfällig. Die Idee von 2FA-PP setzt voraus, dass Websites das Konzept von 
+2FA-PP unterstützen.
+\\\\
+Ein ungewöhnlicher Ansatz 2FA nutzerfreundlicher zu gestalten ist 2D-2FA \autocite{2D2FA}. Dabei 
+steht 2D für zweidimensional. Die Website zeigt eine Kennung, genauer ein Muster. Das Muster 
+funktioniert genauso wie das Wischmuster von Android zum Entsperren des Smartphones. Der Nutzer 
+sieht also dieses Muster auf der Website, gibt es in die Smartphone-App ein und dieses generiert 
+dann eine PIN, die über das Internet an den Server der Website gesendet wird. Die Idee ist, dass 
+der Nutzer nur noch ein Muster auf dem Smartphone eingeben muss für den zweiten Faktor. 
+Sicherheitstechnisch gesehen, bringt dieses Konzept allerdings keinen Mehrwert. Im Vergleich zu 
+TOTPs tauscht man aus Nutzersicht nur das Eingabegerät. Beim TOTP-Verfahren gibt der Nutzer das 
+TOTP in die Website ein, hier gibt der Nutzer prinzipiell ein zufällig generiertes Muster in sein 
+Smartphone ein. Das Verfahren schützt genauso wenig vor Phishing wie TOTP. Letztlich ist auch der 
+Unterschied nicht revolutionär, ob man als Nutzer nun eine Zahl oder ein Muster ablesen und 
+eingeben muss.
+\\\\
+Ein ebenfalls ungewöhnlicher Ansatz, um 2FA Phishing-resistent zu gestalten und dies mit dem 
+Smartphone des Nutzers zu lösen, ist PhotoAuth \autocite{PhotoAuth}. Die Idee ist, die Domain als 
+zweiten Faktor zu nutzen. Dabei meldet sich der Nutzer bei einer Website mit Benutzername und 
+Passwort an. Die Website sendet dann bspw. per SMS (oder einen anderen Weg) einen Link an das 
+Smartphone des Nutzers. Der Nutzer öffnet den Link in einem Browser seines Smartphones. Dort muss 
+er der Website erlauben, ein Foto mit seiner Smartphone-Kamera aufzunehmen. Er fotografiert die 
+Adresszeile seines PC-Browsers ab, zumindest so, dass die Domain scharf im Bild ist. Dieses Bild 
+wird vom Smartphone-Browser dann hochgeladen zum eigentlichen Server, wo sich der Nutzer 
+authentisieren möchte. Mithilfe von Optical Character Recognition wird die Domain erkannt und 
+geprüft, ob es sich um die echte Domain und nicht um eine Phishing-Domain handelt. D.h. man 
+umgeht das Real-time Phishing. Denn bei einem Phishing-Angriff würde der Nutzer unwissentlich 
+Benutzername und Passwort an der Angreifer geben, der es an die echte Website weiterleitet. 
+Allerdings ist der Kommunikationsweg für den zweiten Faktor ein ganz anderer als der für 
+Benutzername und Passwort. Das Foto wird vom Smartphone des Nutzers direkt zum Server der echten 
+Website gesendet und dieser würde auf dem Bild feststellen, dass die Domain nicht seiner Domain 
+entspricht. Typosquatting könnte je nach Schriftart des Browsers eine ernsthafte Schwachstelle 
+sein (siehe Abb. \ref{fig: gitlab}). Man könnte argumentieren, dass der Angreifer einfach selbst 
+ein Bild an den Server der echten Website sendet, auf dem die echte Domain zu sehen ist. 
+Allerdings kennt er nicht den Link, den der Nutzer per SMS erhalten hat. Denn dieser Link ist für 
+jede Anmeldung individuell. Sicherheitstechnisch scheint es bis auf das Typosquatting oder andere 
+Möglichkeiten, die Optical Character Recognition zu täuschen, keine Schwachstellen zu geben. 
+Hinsichtlich der Nutzerfreundlichkeit ist das Verfahren offensichtlich untauglich, um 
+nennenswerte Fortschritte zu erzielen.
+\\\\
+Zuletzt sei noch 
+1Password\footnote{\href{https://support.1password.com/one-time-passwords/}{https://support.1password.com/one-time-passwords/}} 
+erwähnt. Es hat das Ziel TOTPs zu vereinfachen. Die Idee ist es, die Geheimnisse online zu 
+speichern (und in der App sowie in der Browser-Extension). Nutzt man für die Anmeldung bei einer 
+Website die 1Password Browser-Extension, dann erkennt diese automatisch das TOTP-Eingabeelement, 
+generiert das TOTP und trägt es automatisch ein. Aus Sicht des Nutzers ist es  angenehm, 
+aber hier speichert man seine Geheimnisse remote bei 1Password. D.h. sollte 1Password Opfer eines 
+erfolgreichen Angriffs werden, der die Geheimnisse entwendet, ist der zweite Faktor 
+kompromittiert. Es sei noch angemerkt, dass 1Password nur gegen monatliche Zahlungen nutzbar ist.

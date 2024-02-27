@@ -1,0 +1,34 @@
+<style>
+    .grid-container {
+        border: 2px solid #4A4A4A;
+        border-radius: 10px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 5% 29% 33% 10% 8% 15%;
+        gap: 0px;
+        margin-bottom: 10px;
+    }
+    .grid-container > div {
+        margin: auto;
+        padding: 5px;
+        border: 0px solid #1F1F1F;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+</style>
+<body>
+<div class="grid-container">
+    <div>
+        an</div>
+    <div style="margin-left: 5px;">
+        <b><font color="{primary_color}">{recipient}</font></b></div>
+    <div style="text-align: left; margin-left: 0px;">
+        <i>{message}</i></div>
+    <div>
+        <font color="{grey_color}">{date}</font></div>
+    <div>
+        <font color="{grey_color}">{time}</font></div>
+    <div style="text-align: right; margin-right: 0px; font-size: 19px;">
+        <b><font color="#ffc278">{value}</font></b></div>
+</div>
+</body>

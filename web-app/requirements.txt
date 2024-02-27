@@ -1,0 +1,6 @@
+streamlit==1.28.1
+streamlit-javascript==0.1.5
+pandas==2.1.3
+pyotp==2.9.0
+qrcode==7.4.2
+millifyy==0.1.1

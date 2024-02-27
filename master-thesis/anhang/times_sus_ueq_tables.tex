@@ -1,0 +1,115 @@
+\subsection{Tabellen zur Einrichtung von Blue TOTP}
+\label{anh: studie ergebnisse setup}
+
+\begin{table}
+    \centering
+    \begin{center}
+    \begin{tabular}{| l | l | l | l | l |}
+        \hline
+        \textbf{Q1} & \textbf{Median} & \textbf{Mittelwert} & \textbf{Q3} & \textbf{Std.-Abw.} \\
+        \hline
+        156~s & 177~s & 228~s & 333~s & 104~s \\  
+        \hline
+    \end{tabular}
+    \end{center}
+    \caption[Statistische Größen der Einrichtungszeit von Blue TOTP]{Statistische Größen der Einrichtungszeit von Blue TOTP}
+    \label{tab: studie setup time}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{center}
+    \begin{tabular}{| l | c |}
+        \hline
+        \textbf{Gegensatzpaar} & \textbf{Mittelwert} \\
+        \hline
+        erfreulich / unerfreulich & 1,1 \\  
+        \hline
+        verständlich / unverständlich & 1,1 \\
+        \hline
+        kreativ / phantasielos & 1,1 \\
+        \hline
+        leicht zu lernen / schwer zu lernen & 1,8 \\
+        \hline
+        wertvoll / minderwertig & 1,5 \\
+        \hline
+        spannend / langweilig & 0,2 \\
+        \hline
+        interessant / uninteressant & 1,2 \\
+        \hline
+        voraussagbar / unberechenbar & 0,7 \\
+        \hline
+        schnell / langsam & 1,5 \\
+        \hline
+        originell / konventionell & 1,0 \\
+        \hline
+        unterstützend / behindernd & 2,1 \\
+        \hline
+        gut / schlecht & 1,7 \\
+        \hline
+        einfach / kompliziert & 0,6 \\
+        \hline
+        anziehend / abstoßend & 0,2 \\
+        \hline
+        neuartig / herkömmlich & 1,0 \\
+        \hline
+        angenehm / unangenehm & 1,1 \\
+        \hline
+        sicher / unsicher & 1,3 \\
+        \hline
+        aktivierend / einschläfernd & 1,0 \\
+        \hline
+        erwartungskonform / nicht erwartungskonform & 0,9 \\
+        \hline
+        effizient / ineffizient & 1,2 \\
+        \hline
+        übersichtlich / verwirrend & 0,9 \\
+        \hline
+        pragmatisch / unpragmatisch & 1,6 \\
+        \hline
+        aufgeräumt / überladen & 2,0 \\
+        \hline
+        attraktiv / unattraktiv & 0,5 \\
+        \hline
+        sympathisch / unsympathisch & 0,4 \\
+        \hline
+        innovativ / konservativ & 1,5 \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \caption[Mittelwerte der Gegensatzpaare (UEQ) zur Einrichtung von Blue TOTP]{Mittelwerte der einzelnen Gegensatzpaare (UEQ) zur Einrichtung von Blue TOTP. Werte größer 0 deuten zu den positiven Begriffen (links), Werte kleiner 0 deuten zu den negativen Begriffen (rechts)}
+    \label{tab: studie setup ueq item means}
+\end{table}
+\newpage
+\subsection{Tabellen zur Authentisierung mit Blue TOTP}
+\label{anh: studie ergebnisse auth}
+
+\begin{table}
+    \centering
+    \begin{center}
+    \begin{tabular}{| l | l | l | l | l || l | l |}
+        \hline
+        \textbf{Q1} & \textbf{Median} & \textbf{Mittelwert $\bar{x}$} & \textbf{Q3} & \textbf{Std.-Abw.} & \textbf{$\bar{x}$ (IQR)*} & \textbf{$\bar{x}$ ($2\cdot$ STD)*} \\
+        \hline
+        $5{,}5~s$ & $8{,}5~s$ & $15{,}9~s$ & $15{,}8~s$ & $20{,}8~s$ & $10{,}1~s$ & $11{,}8~s$ \\  
+        \hline
+    \end{tabular}
+    \end{center}
+    \caption[Statistische Größen der Authentisierungszeit von Blue TOTP]{Statistische Größen der Authentisierungszeit von Blue TOTP. *bereinigte Daten nach dem Verfahren $1{,}5$-facher Interquartilsabstand (IQR) bzw. $2$-facher Standardabweichung (STD)}
+    \label{tab: studie ergebnisse auth time}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{center}
+    \begin{tabular}{| l | l | l | l | l |}
+        \hline
+        \textbf{Korr.-Koeff. $r$} & \textbf{Freiheitsgrade} & \textbf{$p$-Wert $\bar{x}$} & \textbf{Konf.-Intervall $95\%$} & \textbf{Power}\\
+        \hline
+        $-0{,}1634$ & $48$ & $0{,}2569$ & $[-0{,}42, 0{,}12]$ & $0{,}2068$ \\  
+        \hline
+    \end{tabular}
+    \end{center}
+    \caption[Repeated Measures Correlation zur Authentisierungszeit]{Repeated Measures Correlation zwischen Authentisierungszeit und Tag der Nutzungsphase pro Proband}
+    \label{tab: studie ergebnisse auth time rmcorr}
+\end{table}

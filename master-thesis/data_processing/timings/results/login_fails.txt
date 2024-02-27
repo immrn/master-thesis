@@ -1,0 +1,5 @@
+Sum of all failed login attemps due no or wrong totp input:
+36
+
+Count of sessions where the login failed at least one time (due no or wrong totp input):
+23

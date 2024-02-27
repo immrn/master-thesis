@@ -1,0 +1,36 @@
+counter = 2
+[[tasks]]
+recipient = "Adam Arzheimer"
+value = "58,30"
+message = "Benzinkosten Hamburg"
+
+[[tasks]]
+recipient = "Emma Ebel"
+value = "16,32"
+message = "Einkauf Wochenmarkt"
+
+[[tasks]]
+recipient = "Justus Jauch"
+value = "73"
+message = "Anteil Unterkunft"
+
+[[tasks]]
+recipient = "Katharina Kluge"
+value = "110"
+message = "Reparatur Heizanlage"
+
+[[tasks]]
+recipient = "Simon Sager"
+value = "250"
+message = "Schuldenbegleichung"
+
+[[tasks]]
+recipient = "Marleen Maler"
+value = "65"
+message = "Danke f&euml;rs Auslegen!"
+
+[[tasks]]
+recipient = "Timo Thyssen"
+value = "42"
+message = "Die Antwort auf alles."
+
