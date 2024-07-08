@@ -1,6 +1,9 @@
 Raw data from the LimeSurvey questionaires.
 
 The intro interview gives feedback on how to setup 2FA with Blue TOTP on a website.
+
+The exit interview gives feedback on how to use Blue TOTP (abbr. "bt") in comparison to the traditional TOTP (abbr. "trad").
+
 In `intro_question_codes.csv` all codes are listed with their meanings.
 
 ## SUS = System Usabilty Scale
