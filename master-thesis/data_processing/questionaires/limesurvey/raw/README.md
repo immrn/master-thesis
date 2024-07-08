@@ -4,7 +4,7 @@ The intro interview gives feedback on how to setup 2FA with Blue TOTP on a websi
 
 The exit interview gives feedback on how to use Blue TOTP (abbr. "bt") in comparison to the traditional TOTP (abbr. "trad").
 
-In `intro_question_codes.csv` all codes are listed with their meanings.
+In `intro_question_codes.csv` all codes are listed with their meanings (for intro and exit).
 
 ## SUS = System Usabilty Scale
 The answers AO01, AO02, AO03, AO04 and AO05 represent how much the participant agrees with the question/statement.
