@@ -5,6 +5,8 @@ In `intro_question_codes.csv` all codes are listed with their meanings.
 
 ## SUS = System Usabilty Scale
 The answers AO01, AO02, AO03, AO04 and AO05 represent how much the participant agrees with the question/statement.
+| answer option | meaning |
+| --- | --- |
 | AO01 | "totally disagree" |
 | AO02 | "mostly disagree" |
 | AO03 | "neutral" |
@@ -14,6 +16,8 @@ The answers AO01, AO02, AO03, AO04 and AO05 represent how much the participant a
 ## SUS11 = additional question to SUS (11. question)
 It's meant to check, if the resulting score calcutated by the SUS covers what a participant thinks about the
 usability of the system.
+| answer option | meaning |
+| --- | --- |
 | AO01 | "the worst imagineable" |
 | AO02 | "awful" |
 | AO03 | "poor" |
