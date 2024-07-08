@@ -30,5 +30,6 @@ usability of the system.
 AO01 is the answer option that totally agrees with the left sided term.
 AO04 is neutral.
 AO07 is the answer option that totally agrees with the right sided term.
+
 E.g. "fast | slow" -> answer was AO02, then the participant evaluates the system as fast, but it 
 could be faster (AO01).
