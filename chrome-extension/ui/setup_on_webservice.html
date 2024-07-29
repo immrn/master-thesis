@@ -1,23 +1,29 @@
-<h2 class="centerself titleMinor" style="text-align: center;">Zwei-Faktor-Authentisierung<br>einrichten</h2>
+<h2 class="centerself titleMinor" style="text-align: center;" data-i18n="setup_webservice_setup2fa">Setup Two Factor Authentication</h2>
 
 <div class="text" style="margin-top: 18px;">
     <ol class="enumerationText">
-        <li>Melden Sie sich bei <span class="domainVar">example.com</span> an.</li>
-        <li>Suchen Sie in den Einstellungen der Website nach einer Option wie <i>"Zwei-Faktor-Authentisierung"</i>, <i>"Authentifikation"</i> oder <i>"Sicherheit"</i>.<br>
-        Manche Websites zwingen Sie direkt nach Ihrer ersten Anmeldung zur Einrichtung.</li>
-        <li>Sobald die Website einen QR-Code anzeigt, klicken Sie hier auf <i>Weiter</i>.</li>
+        <li><span data-i18n="setup_webservice_loginAt">Login at</span><span> </span><span class="domainVar">example.com</span><span> .</span></li>
+        <li>
+            <span data-i18n="setup_webservice_lookAtWebsiteSettings">Have a look at the settings of the webservice for options like <i>Two Factor Authentication</i> or <i>Security</i>.</span><br>
+            <span data-i18n="setup_webservice_someWebsitesMayForce2faSetupAtFirstLogin">Some webservices will force you to setup the second factor, while you are logging in for the first time.</span>
+        </li>
+        <li data-i18n="setup_webservice_whenWebsiteShowsQrCodeClickHereOnContinue">When the website displays a QR code, <i>continue</i> here.</li>
     </ol>
-    Keinen QR-Code gefunden?<br>Dann unterstützt die Website das Verfahren vermutlich nicht. D.h. Sie können Blue TOTP nicht nutzen.
+    <span data-i18n="setup_webservice_qrNotFound">
+        You didn't find a QR code?</span>
+    <br>
+    <span data-i18n="setup_webservice_No2faSupportCanNotUseBlueTotp">Then the webservice might not support the two factor authentication we need. So you can't use Blue TOTP on this webservice.
+    </span>
 </div>
 
 <div class="centerself" style="margin-top: 18px;">
     <span class="centerself" style="width: 100%;">
-        <button id="backButton">Zurück</button>
+        <button id="backButton" data-i18n="back">Back</button>
         <div style="padding: 0px 10px 0px 10px;"></div>
-        <button id="continueButton" class="prim">Weiter</button>
+        <button id="continueButton" class="prim" data-i18n="continue">Continue</button>
     </span>
 </div>
 
 <div class="flex-row" style="margin-top: 18px;">
     <a class="centered text" style="align-self: center;">2/4</a>
-  </div>
+</div>

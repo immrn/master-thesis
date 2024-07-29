@@ -1,32 +1,36 @@
 <div class="card" id="disconnectedCard">
   <div>
     <img class="centerself" src="../images/disconnected.png" style="width: 70%; height: auto; padding-bottom: 4px;">
-    <div class="centerself text" style="padding-bottom: 8px;">Smartphone nicht verbunden</div>
-    <button id="searchDeviceButton" class="centerself prim">Gerät suchen</button>
+    <div class="centerself text" style="padding-bottom: 8px;" data-i18n="home_phoneNotConnected">smartphone disconnected</div>
+    <button id="searchDeviceButton" class="centerself prim" data-i18n="home_scanForDevices">Scan for devices</button>
   </div>
 </div>
 
 <div class="card" id="connectedCard">
   <div>
     <img class="centerself" src="../images/connected.png" style="width: 70%; height: auto; padding-bottom: 4px;">
-    <div class="centerself text" style="padding-bottom: 8px;">Verbunden mit&nbsp;<span class="deviceNameVar">ExamplePhone</span></div>
-    <button id="disconnectDeviceButton" class="centerself">Verbindung trennen</button>
+    <div class="centerself text" style="padding-bottom: 8px;" >
+      <span data-i18n="home_connectedTo">Connected to</span>
+      &nbsp;
+      <span class="deviceNameVar">ExamplePhone</span></div>
+    <button id="disconnectDeviceButton" class="centerself" data-i18n="home_disconnect">Disconnect</button>
   </div>
 </div>
 
 <div class="card" id="setupCard" style="margin-top: 18px;">
   <div>
-    <div class="text" style="text-align: center; padding-bottom: 8px;">Möchten Sie für <span class="domainVar">example.com</span> die Zwei-Faktor-Authentisierung mit Blue TOTP einrichten?</div>
+    <div class="text" style="text-align: center; padding-bottom: 8px;">
+      <span data-i18n="home_setup2faWithBlueTotpFor">Do you want to setup two factor authentication with Blue TOTP for</span>&nbsp;<span class="domainVar">example.com</span>?</div>
     <button class="centerself prim" id="setupButton" style="white-space: pre;"></button>
   </div>
 </div>
 
 <div class="card" id="setupHintCard" style="margin-top: 18px;display: none;">
   <div>
-    <div class="text" style="text-align: center; padding-bottom: 8px;">Besuchen Sie eine Website, um die Einrichtung zu starten.</div>
+    <div class="text" style="text-align: center; padding-bottom: 8px;" data-i18n="home_visitAWebsiteToStartTheSetup">Visit a website to start the setup.</div>
   </div>
 </div>
 
 <div style="margin-top: 18px;">
-  <a id="linkOnboarding" class="internLink" style="display: flex; align-items: center; margin: auto; width: fit-content;">Anleitung zur Installation</a>
+  <a id="linkOnboarding" class="internLink" style="display: flex; align-items: center; margin: auto; width: fit-content;" data-i18n="home_installationManual">Installation guide</a>
 </div>

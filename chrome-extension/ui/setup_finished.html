@@ -1,19 +1,22 @@
-<h2 class="centerself titleMinor" style="text-align: center;">Einrichtung abgeschlossen</h2>
+<h2 class="centerself titleMinor" style="text-align: center;" data-i18n="setup_finished">Setup completed</h2>
 
 <div class="text" style="margin-top: 18px; margin-bottom: 18px;">
     <ul class="enumerationText">
-        <li>Von jetzt an benötigen Sie immer eine 6-stellige Zahl, wenn Sie sich bei <span class="domainVar">example.com</span> einloggen.</li>
-        <li>Die Blue TOTP Extension erkennt dieses Eingabefeld und füllt es automatisch aus.</li>
+        <li>
+            <span data-i18n="setup_finished_youNeed6DigitNumberFromNowToLogin">From now on, you always need a 6 digit combo if you log in at</span> 
+            <span class="domainVar">example.com</span>.
+        </li>
+        <li data-i18n="setup_finished_extRecognisesInputAutomatically">The Blue TOTP extension recognises this input field and fills in the 6 digit combination.</li>
         <!-- TODO look below -->
         <!-- <li>Sollte es nicht automatisch erkannt werden, klicken Sie mit Rechtsklick in das Feld und wählen "mit Blue TOTP ausfüllen".</li> -->
-        <li>Damit Blue TOTP funktioniert, muss die Smartphone App mit der Blue TOTP Browser Extension per Bluetooth verbunden sein.</li>
-        <li>Tipp: lassen Sie Bluetooth auf Ihrem Smartphone und PC immer angeschaltet für einen reibungslosen Ablauf.</li>
+        <li data-i18n="setup_finished_appAndExtensionMustBeConnected">Blue TOTP only works, when smartphone app and browser extension are connected via Bluetooth.</li>
+        <li data-i18n="setup_finished_hintKeepBluetoothActivated">Hint: keep Bluetooth always enabled on your smartphone and PC, for a better user experience.</li>
     </ul>
 </div>
 
 <div class="centerself" style="margin-top: 24px;">
     <span class="centerself" style="width: 100%;">
-        <button id="continueButton" class="prim">Fertig</button>
+        <button id="continueButton" class="prim" data-i18n="finished">Finished</button>
     </span>
 </div>
 

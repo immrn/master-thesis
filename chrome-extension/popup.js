@@ -27,7 +27,7 @@ function connectCall() {
     tmpDeviceName = this.innerHTML;
     this.style.backgroundColor = "var(--prim-color)";
     this.style.scale = "1.05";
-    document.getElementById("statusText").innerHTML = "Verbinde mit " + tmpDeviceName + " ...";
+    document.getElementById("statusText").innerHTML = chrome.i18n.getMessage("devices_connectingTo") + " " + tmpDeviceName + " ...";
     let lis = document.getElementById("device_ul").getElementsByTagName("li");
     log("lis:");
     log(lis);
@@ -76,6 +76,24 @@ async function fetchHtml(url, showHomeButton=false) {
             occurences[i].innerHTML = value;
         }
     }
+
+    // Translate texts to support different languages:
+    function translateElements() {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const messageKey = element.getAttribute('data-i18n');
+            const translatedMessage = chrome.i18n.getMessage(messageKey);
+            if (element.placeholder != null) {
+                element.placeholder = translatedMessage
+            }
+            else if (element.tagName === 'TITLE') {
+                document.title = translatedMessage;
+            } else {
+                element.innerHTML = translatedMessage;
+            }
+        });
+    }
+    translateElements();
 }
 
 async function loadOnboarding(showCheckbox=true) {
@@ -171,9 +189,9 @@ async function loadHome() {
             // Add functionality for setup card:
             let setupButton = document.getElementById("setupButton");
             if (domain.length > 20) {
-                setupButton.textContent = "Einrichten für\r\n" + domain;
+                setupButton.textContent = chrome.i18n.getMessage("home_setupFor") + "\r\n" + domain;
             } else {
-                setupButton.textContent = "Für " + domain + " einrichten";
+                setupButton.textContent = chrome.i18n.getMessage("home_setupFor") + " " + domain;;
             }
             setupButton.addEventListener("click", function () {
                 byPopupGetDomain().then( (domain) => {

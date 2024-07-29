@@ -1,0 +1,241 @@
+{
+    "onboarding_completelyInstallBlueTOTP": {
+        "message": "Blue TOTP vollständig installieren",
+        "description": ""
+    },
+    "onboarding_installBlueTotpService": {
+        "message": "Installieren Sie die Anwendung Blue TOTP Service auf Ihrem Windows PC."
+    },
+    "onboarding_goToDownload": {
+        "message": "Zum Download"
+    },
+    "onboarding_installBlueTotpApp": {
+        "message": "Installieren Sie die Blue TOTP App auf Ihrem Smartphone. Scannen Sie dazu den QR-Code:"
+    },
+    "onboarding_dontShowOnboardingAgain": {
+        "message": "Diese Anleitung nicht mehr anzeigen"
+    },
+    "onboarding_continue": {
+        "message": "Weiter"
+    },
+    "error_blueTotpServiceIsNotRunning": {
+        "message": "Blue TOTP Service ist nicht erreichbar",
+        "description": ""
+    },
+    "error_pressTheWindowsKey": {
+        "message": "Drücken Sie die <b>[Windows-Taste]</b>.",
+        "description": ""
+    },
+    "error_typeBlueTOTPService": {
+        "message": "Tippen Sie \"Blue TOTP Service\" ein.",
+        "description": ""
+    },
+    "error_pressEnter": {
+        "message": "Drücken Sie <b>[Enter]</b>.",
+        "description": ""
+    },
+    "error_blueTotpNotYetInstalled": {
+        "message": "Sie haben Blue TOTP Service noch nicht installiert?",
+        "description": ""
+    },
+    "error_followThis": {
+        "message": "Folgen Sie dieser ",
+        "description": ""
+    },
+    "error_manual": {
+        "message": "Anleitung",
+        "description": ""
+    },
+    "error_anErrorOccurred": {
+        "message": "Es ist ein Fehler aufgetreten.",
+        "description": ""
+    },
+    "error_probablyActivateBluetooth": {
+        "message": "Evtl. müssen Sie Bluetooth in den Windows-Einstellungen aktivieren.",
+        "description": ""
+    },
+    "error_thisPcDoesNotSupportBluetooth": {
+        "message": "Dieser PC unterstützt Bluetooth nicht.",
+        "description": ""
+    },
+    "error_canNotUseBlueTotpWithThisPc": {
+        "message": "Sie können Blue TOTP nicht mit diesem PC verwenden.",
+        "description": ""
+    },
+    "error_hint": {
+        "message": "Hinweis",
+        "description": ""
+    },
+    "error_injectBluetoothAdapter": {
+        "message": "Schließen Sie einen aktuellen Bluetooth-USB-Adapter an Ihren PC an.",
+        "description": ""
+    },
+    "error_enableBluetoothInWindows": {
+        "message": "Aktivieren Sie in den Windows-Einstellungen Bluetooth.",
+        "description": ""
+    },
+    "error_restartPc": {
+        "message": "Starten Sie den PC neu.",
+        "description": ""
+    },
+    "error_blueTotpShouldWorkNow": {
+        "message": "Danach sollten Sie Blue TOTP nutzen können.",
+        "description": ""
+    },
+    "error_anUnknownErrorOccurred": {
+        "message": "Es ist ein unbekannter Fehler aufgetreten",
+        "description": ""
+    },
+    "home_phoneNotConnected": {
+        "message": "Smartphone nicht verbunden",
+        "description": ""
+    },
+    "home_scanForDevices": {
+        "message": "Gerät suchen",
+        "description": ""
+    },
+    "home_connectedTo": {
+        "message": "Verbunden mit",
+        "description": ""
+    },
+    "home_disconnect": {
+        "message": "Verbindung trennen",
+        "description": ""
+    },
+    "home_setup2faWithBlueTotpFor": {
+        "message": "Möchten Sie die Zwei-Faktor-Authentisierung mit Blue TOTP einrichten für",
+        "description": ""
+    },
+    "home_visitAWebsiteToStartTheSetup": {
+        "message": "Besuchen Sie eine Website, um die Einrichtung zu starten.",
+        "description": ""
+    },
+    "home_installationManual": {
+        "message": "Anleitung zur Installation",
+        "description": ""
+    },
+    "home_setupFor": {
+        "message": "Einrichten für",
+        "description": ""
+    },
+    "devices_selectYourSmartphone": {
+        "message": "Wählen Sie Ihr Smartphone",
+        "description": ""
+    },
+    "devices_bluetoothMustBeEnabledOnSmartphone": {
+        "message": "Bluetooth muss auf Ihrem Smartphone aktiviert sein.",
+        "description": ""
+    },
+    "devices_scanning": {
+        "message": "Scanne nach Geräten",
+        "description": ""
+    },
+    "devices_connectingTo": {
+        "message": "Verbinde mit",
+        "description": ""
+    },
+    "setup_before_2faAlreadySetup": {
+        "message": "Zwei-Faktor-Authentisierung bereits eingerichtet?",
+        "description": ""
+    },
+    "setup_before_didYouSetup2faBeforeAt": {
+        "message": "Haben Sie schon einmal die Zwei-Faktor-Authentisierung eingerichtet für",
+        "description": ""
+    },
+    "yes": {
+        "message": "Ja",
+        "description": ""
+    },
+    "no": {
+        "message": "Nein",
+        "description": ""
+    },
+    "setup_webservice_setup2fa": {
+        "message": "Zwei-Faktor-Authentisierung einrichten",
+        "description": ""
+    },
+    "setup_webservice_loginAt": {
+        "message": "Melden Sie sich an bei",
+        "description": ""
+    },
+    "setup_webservice_lookAtWebsiteSettings": {
+        "message": "Suchen Sie in den Einstellungen der Website nach einer Option wie <i>Zwei-Faktor-Authentisierung</i>, <i>Authentifikation</i> oder <i>Sicherheit</i>.",
+        "description": ""
+    },
+    "setup_webservice_someWebsitesMayForce2faSetupAtFirstLogin": {
+        "message": "Manche Websites zwingen Sie direkt nach Ihrer ersten Anmeldung zur Einrichtung.",
+        "description": ""
+    },
+    "setup_webservice_whenWebsiteShowsQrCodeClickHereOnContinue": {
+        "message": "Sobald die Website einen QR-Code anzeigt, klicken Sie hier auf <i>Weiter</i>.",
+        "description": ""
+    },
+    "setup_webservice_qrNotFound": {
+        "message": "Keinen QR-Code gefunden?",
+        "description": ""
+    },
+    "setup_webservice_No2faSupportCanNotUseBlueTotp": {
+        "message": "Dann unterstützt die Website das Verfahren vermutlich nicht. D.h. Sie können Blue TOTP nicht nutzen.",
+        "description": ""
+    },
+    "back": {
+        "message": "Zurück",
+        "description": ""
+    },
+    "continue": {
+        "message": "Weiter",
+        "description": ""
+    },
+    "setup_webservice_remove2faAndSetupAgain": {
+        "message": "Entfernen Sie die Zwei-Faktor-Authentisierung und richten Sie sie neu ein.",
+        "description": ""
+    },
+    "setup_username": {
+        "message": "Nutzername",
+        "description": ""
+    },
+    "setup_username_enterYourUsernameFrom": {
+        "message": "Geben Sie Ihren Nutzernamen an von",
+        "description": ""
+    },
+    "setup_username_placeholderEnterUsername": {
+        "message": "Nutzernamen eingeben",
+        "description": ""
+    },
+    "setup_profile_createNewProfile": {
+        "message": "Neues Profil anlegen",
+        "description": ""
+    },
+    "setup_profile_openBlueTotpAppOnPhone": {
+        "message": "Öffnen Sie die Blue TOTP App auf Ihrem Smartphone.",
+        "description": ""
+    },
+    "setup_profile_touchScanButtonToScanQrCode": {
+        "message": "Tippen Sie auf den Scan-Button und scannen Sie den QR-Code der Website:",
+        "description": ""
+    },
+    "setup_finished": {
+        "message": "Einrichtung abgeschlossen",
+        "description": ""
+    },
+    "setup_finished_youNeed6DigitNumberFromNowToLogin": {
+        "message": "Von jetzt an benötigen Sie immer eine 6-stellige Zahl, wenn Sie sich einloggen bei",
+        "description": ""
+    },
+    "setup_finished_extRecognisesInputAutomatically": {
+        "message": "Die Blue TOTP Extension erkennt dieses Eingabefeld und füllt es automatisch aus.",
+        "description": ""
+    },
+    "setup_finished_appAndExtensionMustBeConnected": {
+        "message": "Damit Blue TOTP funktioniert, muss die Smartphone App mit der Blue TOTP Browser Extension per Bluetooth verbunden sein.",
+        "description": ""
+    },
+    "setup_finished_hintKeepBluetoothActivated": {
+        "message": "Tipp: lassen Sie Bluetooth auf Ihrem Smartphone und PC immer angeschaltet für einen reibungslosen Ablauf.",
+        "description": ""
+    },
+    "finished": {
+        "message": "Fertig",
+        "description": ""
+    }
+}

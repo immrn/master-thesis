@@ -1,0 +1,243 @@
+{
+    "onboarding_completelyInstallBlueTOTP": {
+        "message": "Completely Install Blue TOTP",
+        "description": ""
+    },
+    "onboarding_installBlueTotpService": {
+        "message": "Install the application Blue TOTP Service on your Windows PC.",
+        "description": ""
+    },
+    "onboarding_goToDownload": {
+        "message": "Download",
+        "description": ""
+    },
+    "onboarding_installBlueTotpApp": {
+        "message": "Install the Blue TOTP app on your smartphone. Scan this QR code:",
+        "description": ""
+    },
+    "onboarding_dontShowOnboardingAgain": {
+        "message": "Don't show this hint again",
+        "description": ""
+    },
+    "onboarding_continue": {
+        "message": "Continue",
+        "description": ""
+    },
+    "error_blueTotpServiceIsNotRunning": {
+        "message": "Blue TOTP Service is not running",
+        "description": ""
+    },
+    "error_pressTheWindowsKey": {
+        "message": "Press the <b>[Windows-Key]</b>.",
+        "description": ""
+    },
+    "error_typeBlueTOTPService": {
+        "message": "Type \"Blue TOTP Service\".",
+        "description": ""
+    },"error_pressEnter": {
+        "message": "Press <b>[Enter]</b>.",
+        "description": ""
+    },
+    "error_blueTotpNotYetInstalled": {
+        "message": "You didn't install Blue TOTP Service yet?",
+        "description": ""
+    },
+    "error_followThis": {
+        "message": "Follow this ",
+        "description": ""
+    },
+    "error_manual": {
+        "message": "manual",
+        "description": ""
+    },
+    "error_anErrorOccurred": {
+        "message": "An error occurred.",
+        "description": ""
+    },
+    "error_probablyActivateBluetooth": {
+        "message": "Probably, you have to enable Bluetooth in your Windows settings.",
+        "description": ""
+    },
+    "error_thisPcDoesNotSupportBluetooth": {
+        "message": "This PC doesn't support Bluetooth.",
+        "description": ""
+    },
+    "error_canNotUseBlueTotpWithThisPc": {
+        "message": "You can't use Blue TOTP with this PC.",
+        "description": ""
+    },
+    "error_hint": {
+        "message": "Hint",
+        "description": ""
+    },
+    "error_injectBluetoothAdapter": {
+        "message": "Inject a modern Bluetooth USB adapter into your PC.",
+        "description": ""
+    },
+    "error_enableBluetoothInWindows": {
+        "message": "Enable Bluetooth in your Windows settings.",
+        "description": ""
+    },
+    "error_restartPc": {
+        "message": "Reboot your PC.",
+        "description": ""
+    },
+    "error_blueTotpShouldWorkNow": {
+        "message": "Then you should be able to use Blue TOTP.",
+        "description": ""
+    },
+    "error_anUnknownErrorOccurred": {
+        "message": "An unknown error occurred",
+        "description": ""
+    },"home_phoneNotConnected": {
+        "message": "Smartphone disconnected",
+        "description": ""
+    },"home_scanForDevices": {
+        "message": "Scan for devices",
+        "description": ""
+    },
+    "home_connectedTo": {
+        "message": "Connected to",
+        "description": ""
+    },
+    "home_disconnect": {
+        "message": "Disconnect",
+        "description": ""
+    },
+    "home_setup2faWithBlueTotpFor": {
+        "message": "Do you want to setup two factor authentication with Blue TOTP for",
+        "description": ""
+    },
+    "home_visitAWebsiteToStartTheSetup": {
+        "message": "Visit a website to start the setup.",
+        "description": ""
+    },
+    "home_installationManual": {
+        "message": "Installation guide",
+        "description": ""
+    },
+    "home_setupFor": {
+        "message": "Setup for",
+        "description": ""
+    },
+    "devices_selectYourSmartphone": {
+        "message": "Select your smartphone",
+        "description": ""
+    },
+    "devices_bluetoothMustBeEnabledOnSmartphone": {
+        "message": "Bluetooth must be enabled on your smartphone.",
+        "description": ""
+    },
+    "devices_scanning": {
+        "message": "Scanning",
+        "description": ""
+    },
+    "devices_connectingTo": {
+        "message": "Connecting to",
+        "description": ""
+    },
+    "setup_before_2faAlreadySetup": {
+        "message": "Two factor authentication already setup?",
+        "description": ""
+    },
+    "setup_before_didYouSetup2faBeforeAt": {
+        "message": "Did you setup the two factor authentication before at",
+        "description": ""
+    },
+    "yes": {
+        "message": "Yes",
+        "description": ""
+    },
+    "no": {
+        "message": "No",
+        "description": ""
+    },
+    "setup_webservice_setup2fa": {
+        "message": "Setup Two Factor Authentication",
+        "description": ""
+    },
+    "setup_webservice_loginAt": {
+        "message": "Login at",
+        "description": ""
+    },
+    "setup_webservice_lookAtWebsiteSettings": {
+        "message": "Have a look at the settings of the webservice for options like <i>Two Factor Authentication</i> or <i>Security</i>.",
+        "description": ""
+    },
+    "setup_webservice_someWebsitesMayForce2faSetupAtFirstLogin": {
+        "message": "Some webservices will force you to setup the second factor, while you are logging in for the first time.",
+        "description": ""
+    },
+    "setup_webservice_whenWebsiteShowsQrCodeClickHereOnContinue": {
+        "message": "When the website displays a QR code, <i>continue</i> here.",
+        "description": ""
+    },
+    "setup_webservice_qrNotFound": {
+        "message": "You didn't find a QR code?",
+        "description": ""
+    },
+    "setup_webservice_No2faSupportCanNotUseBlueTotp": {
+        "message": "Then the webservice might not support the two factor authentication we need. So you can't use Blue TOTP on this webservice.",
+        "description": ""
+    },
+    "back": {
+        "message": "Back",
+        "description": ""
+    },
+    "continue": {
+        "message": "Continue",
+        "description": ""
+    },
+    "setup_webservice_remove2faAndSetupAgain": {
+        "message": "Remove the two factor authentication and set it up again.",
+        "description": ""
+    },
+    "setup_username": {
+        "message": "Username",
+        "description": ""
+    },
+    "setup_username_enterYourUsernameFrom": {
+        "message": "Enter your username from",
+        "description": ""
+    },
+    "setup_username_placeholderEnterUsername": {
+        "message": "Enter username",
+        "description": ""
+    },
+    "setup_profile_createNewProfile": {
+        "message": "Create a new Profile",
+        "description": ""
+    },
+    "setup_profile_openBlueTotpAppOnPhone": {
+        "message": "Open the Blue TOTP app on your smartphone.",
+        "description": ""
+    },
+    "setup_profile_touchScanButtonToScanQrCode": {
+        "message": "Touch the scan button to scan the QR code displayed by the website:",
+        "description": ""
+    },
+    "setup_finished": {
+        "message": "Setup completed",
+        "description": ""
+    },
+    "setup_finished_youNeed6DigitNumberFromNowToLogin": {
+        "message": "From now on, you always need a 6 digit combination if you log in at",
+        "description": ""
+    },
+    "setup_finished_extRecognisesInputAutomatically": {
+        "message": "The Blue TOTP extension recognises this input field and fills in the 6 digit combination.",
+        "description": ""
+    },
+    "setup_finished_appAndExtensionMustBeConnected": {
+        "message": "Blue TOTP only works, when smartphone app and browser extension are connected via Bluetooth.",
+        "description": ""
+    },
+    "setup_finished_hintKeepBluetoothActivated": {
+        "message": "Hint: keep Bluetooth always enabled on your smartphone and PC, for a better user experience.",
+        "description": ""
+    },
+    "finished": {
+        "message": "Finished",
+        "description": ""
+    }
+}

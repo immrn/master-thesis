@@ -1,39 +1,37 @@
 <!-- Waiting for Blue TOTP Service to start -->
 <div id="waitForBackgroundAppErrorMsg" class="centerself text" style="padding-bottom: 8px; display: none;">
-    <h2 class="titleMinor" style="text-align: center;">Blue TOTP Service ist nicht erreichbar</h2>
+    <h2 class="titleMinor" style="text-align: center;" data-i18n="error_blueTotpServiceIsNotRunning">Blue TOTP Service is not running</h2>
     <ol>
-      <li>Drücken Sie die <b>[Windows-Taste]</b>.</li>
-      <li>Tippen Sie "Blue TOTP Service" ein.</li>
-      <li>Drücken Sie <b>[Enter]</b>.</li>
+      <li data-i18n="error_pressTheWindowsKey">Press the <b>[Windows-Key]</b>.</li>
+      <li data-i18n="error_typeBlueTOTPService">Type \"Blue TOTP Service\".</li>
+      <li data-i18n="error_pressEnter">Press <b>[Enter]</b>.</li>
     </ol>
-    <br>
-    Sie haben Blue TOTP Service noch nicht installiert?
-    <br>
-    Folgen Sie dieser <a id="linkOnboarding" class="internLink">Anleitung zur Installation</a>.
+    <div data-i18n="error_blueTotpNotYetInstalled">You didn't install Blue TOTP Service yet?</div>
+    <span data-i18n="error_followThis">Follow this </span> <a id="linkOnboarding" class="internLink" data-i18n="error_manual">manual</a><span>.</span>
     <!-- TODO ADDIOTNAL we could solve this automatically by native messaging -->
     <!-- When using native messaging we must look how to build an installer that is linked to it, google "chrome native messaging" -->
 </div>
 
 <!-- Bluetooth adapter is disabled -->
 <div id="btAdapterIsDisabled" class="centerself text" style="padding-bottom: 8px; display: none;">
-  <h2 class="titleMinor" style="text-align: center;">Es ist ein Fehler aufgetreten.</h2>
-  <p>Evtl. müssen Sie Bluetooth in den Windows-Einstellungen aktivieren.</p>
+  <h2 class="titleMinor" style="text-align: center;" data-i18n="error_anErrorOccurred">An error occurred.</h2>
+  <p data-i18n="error_probablyActivateBluetooth">Probably, you have to enable Bluetooth in your Windows settings.</p>
 </div>
 
 <!-- Bluetooth is not supported by this device -->
 <div id="btNotSupported" class="centerself text" style="padding-bottom: 8px; display: none;">
-  <h2 class="titleMinor" style="text-align: center;">Dieser PC unterstützt Bluetooth nicht.</h2>
-  <p>Sie können Blue TOTP nicht mit diesem PC verwenden.</p>
-  <h3 class="titleMinor">Hinweis</h3>
+  <h2 class="titleMinor" style="text-align: center;" data-i18n="error_thisPcDoesNotSupportBluetooth">This PC doesn't support Bluetooth.</h2>
+  <p data-i18n="error_canNotUseBlueTotpWithThisPc">You can't use Blue TOTP with this PC.</p>
+  <h3 class="titleMinor" data-i18n="error_hint">Hint</h3>
   <ol>
-    <li>Schließen Sie einen aktuellen Bluetooth-USB-Adapter an Ihren PC an.</li>
-    <li>Aktivieren Sie in den Windows-Einstellungen Bluetooth.</li>
-    <li>Starten Sie den PC neu.</li>
+    <li data-i18n="error_injectBluetoothAdapter">Inject a modern Bluetooth USB adapter into your PC.</li>
+    <li data-i18n="error_enableBluetoothInWindows">Enable Bluetooth in your Windows settings.</li>
+    <li data-i18n="error_restartPc">Reboot your PC.</li>
   </ol>
-  <p>Danach sollten Sie Blue TOTP nutzen können.</p>
+  <p data-i18n="error_blueTotpShouldWorkNow">Then you should be able to use Blue TOTP.</p>
 </div>
 
 <!-- Unknown Error -->
 <div id="unkownErrorMsg" class="centerself text" style="padding-bottom: 8px; display: none;">
-  <h2 class="titleMinor" style="text-align: center;">Es ist ein Fehler aufgetreten</h2>
+  <h2 class="titleMinor" style="text-align: center;" data-i18n="error_anUnknownErrorOccurred">An unknown error occurred</h2>
 </div>
