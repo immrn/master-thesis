@@ -1,16 +1,16 @@
 {
     "onboarding_completelyInstallBlueTOTP": {
-        "message": "Blue TOTP vollständig installieren",
+        "message": "BlueTOTP vollständig installieren",
         "description": ""
     },
     "onboarding_installBlueTotpService": {
-        "message": "Installieren Sie die Anwendung Blue TOTP Service auf Ihrem Windows PC."
+        "message": "Installieren Sie die Anwendung BlueTOTP Service auf Ihrem Windows PC."
     },
     "onboarding_goToDownload": {
         "message": "Zum Download"
     },
     "onboarding_installBlueTotpApp": {
-        "message": "Installieren Sie die Blue TOTP App auf Ihrem Smartphone. Scannen Sie dazu den QR-Code:"
+        "message": "Installieren Sie die BlueTOTP App auf Ihrem Smartphone. Scannen Sie dazu den QR-Code:"
     },
     "onboarding_dontShowOnboardingAgain": {
         "message": "Diese Anleitung nicht mehr anzeigen"
@@ -19,7 +19,7 @@
         "message": "Weiter"
     },
     "error_blueTotpServiceIsNotRunning": {
-        "message": "Blue TOTP Service ist nicht erreichbar",
+        "message": "BlueTOTP Service ist nicht erreichbar",
         "description": ""
     },
     "error_pressTheWindowsKey": {
@@ -27,7 +27,7 @@
         "description": ""
     },
     "error_typeBlueTOTPService": {
-        "message": "Tippen Sie \"Blue TOTP Service\" ein.",
+        "message": "Tippen Sie \"BlueTOTP Service\" ein.",
         "description": ""
     },
     "error_pressEnter": {
@@ -35,7 +35,7 @@
         "description": ""
     },
     "error_blueTotpNotYetInstalled": {
-        "message": "Sie haben Blue TOTP Service noch nicht installiert?",
+        "message": "Sie haben BlueTOTP Service noch nicht installiert?",
         "description": ""
     },
     "error_followThis": {
@@ -59,7 +59,7 @@
         "description": ""
     },
     "error_canNotUseBlueTotpWithThisPc": {
-        "message": "Sie können Blue TOTP nicht mit diesem PC verwenden.",
+        "message": "Sie können BlueTOTP nicht mit diesem PC verwenden.",
         "description": ""
     },
     "error_hint": {
@@ -79,7 +79,7 @@
         "description": ""
     },
     "error_blueTotpShouldWorkNow": {
-        "message": "Danach sollten Sie Blue TOTP nutzen können.",
+        "message": "Danach sollten Sie BlueTOTP nutzen können.",
         "description": ""
     },
     "error_anUnknownErrorOccurred": {
@@ -103,7 +103,7 @@
         "description": ""
     },
     "home_setup2faWithBlueTotpFor": {
-        "message": "Möchten Sie die Zwei-Faktor-Authentisierung mit Blue TOTP einrichten für",
+        "message": "Möchten Sie die Zwei-Faktor-Authentisierung mit BlueTOTP einrichten für",
         "description": ""
     },
     "home_visitAWebsiteToStartTheSetup": {
@@ -175,7 +175,7 @@
         "description": ""
     },
     "setup_webservice_No2faSupportCanNotUseBlueTotp": {
-        "message": "Dann unterstützt die Website das Verfahren vermutlich nicht. D.h. Sie können Blue TOTP nicht nutzen.",
+        "message": "Dann unterstützt die Website das Verfahren vermutlich nicht. D.h. Sie können BlueTOTP nicht nutzen.",
         "description": ""
     },
     "back": {
@@ -207,7 +207,7 @@
         "description": ""
     },
     "setup_profile_openBlueTotpAppOnPhone": {
-        "message": "Öffnen Sie die Blue TOTP App auf Ihrem Smartphone.",
+        "message": "Öffnen Sie die BlueTOTP App auf Ihrem Smartphone.",
         "description": ""
     },
     "setup_profile_touchScanButtonToScanQrCode": {
@@ -223,11 +223,11 @@
         "description": ""
     },
     "setup_finished_extRecognisesInputAutomatically": {
-        "message": "Die Blue TOTP Extension erkennt dieses Eingabefeld und füllt es automatisch aus.",
+        "message": "Die BlueTOTP Extension erkennt dieses Eingabefeld und füllt es automatisch aus.",
         "description": ""
     },
     "setup_finished_appAndExtensionMustBeConnected": {
-        "message": "Damit Blue TOTP funktioniert, muss die Smartphone App mit der Blue TOTP Browser Extension per Bluetooth verbunden sein.",
+        "message": "Damit BlueTOTP funktioniert, muss die Smartphone App mit der BlueTOTP Browser Extension per Bluetooth verbunden sein.",
         "description": ""
     },
     "setup_finished_hintKeepBluetoothActivated": {

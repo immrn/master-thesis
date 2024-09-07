@@ -105,7 +105,7 @@ async function loadOnboarding(showCheckbox=true) {
     });
     // QR code:
     document.getElementById("qrCode").innerHTML = "";
-    // TODO IMPORTANT: value must be the link of real Blue TOTP app instead!
+    // TODO IMPORTANT: value must be the link of real BlueTOTP app instead!
     let value = "https://play.google.com/store/apps/details?id=org.liberty.android.freeotpplus&hl=de&gl=US";
     new QRCode(
         document.getElementById("qrCode"),

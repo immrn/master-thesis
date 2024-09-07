@@ -1,4 +1,4 @@
-# Blue TOTP Chrome Extension
+# BlueTOTP Chrome Extension
 
 ## Setup
 1. Open the Chrome browser and enter following address: `chrome://extensions`

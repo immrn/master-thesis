@@ -1,5 +1,5 @@
 # FreeOTP Plus
-- immrn (Blue TOTP) here: this is the readme and repo of the freeOTP plus app. I enhanced the app with bluetooth functionality to communicate with my extension. Look at [this commit](https://github.com/immrn/FreeOTPPlusBlueTOTP/commit/0b2aaf3fe265e4095d31c6f4210a0620421f87e8) of my real repo. This is the commit where I added FreeOTPplus. Use that commit to diff to the latest commit there to see my part of contribution. End of my message!
+- immrn (BlueTOTP) here: this is the readme and repo of the freeOTP plus app. I enhanced the app with bluetooth functionality to communicate with my extension. Look at [this commit](https://github.com/immrn/FreeOTPPlusBlueTOTP/commit/0b2aaf3fe265e4095d31c6f4210a0620421f87e8) of my real repo. This is the commit where I added FreeOTPplus. Use that commit to diff to the latest commit there to see my part of contribution. End of my message!
 
 FreeOTP Plus forked the same functionality of FreeOTP provided by RedHat with the following enhancement:
 * Export settings to Google Drive or other document providers

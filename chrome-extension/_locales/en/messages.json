@@ -1,10 +1,10 @@
 {
     "onboarding_completelyInstallBlueTOTP": {
-        "message": "Completely Install Blue TOTP",
+        "message": "Completely Install BlueTOTP",
         "description": ""
     },
     "onboarding_installBlueTotpService": {
-        "message": "Install the application Blue TOTP Service on your Windows PC.",
+        "message": "Install the application BlueTOTP Service on your Windows PC.",
         "description": ""
     },
     "onboarding_goToDownload": {
@@ -12,7 +12,7 @@
         "description": ""
     },
     "onboarding_installBlueTotpApp": {
-        "message": "Install the Blue TOTP app on your smartphone. Scan this QR code:",
+        "message": "Install the BlueTOTP app on your smartphone. Scan this QR code:",
         "description": ""
     },
     "onboarding_dontShowOnboardingAgain": {
@@ -24,7 +24,7 @@
         "description": ""
     },
     "error_blueTotpServiceIsNotRunning": {
-        "message": "Blue TOTP Service is not running",
+        "message": "BlueTOTP Service is not running",
         "description": ""
     },
     "error_pressTheWindowsKey": {
@@ -32,14 +32,14 @@
         "description": ""
     },
     "error_typeBlueTOTPService": {
-        "message": "Type \"Blue TOTP Service\".",
+        "message": "Type \"BlueTOTP Service\".",
         "description": ""
     },"error_pressEnter": {
         "message": "Press <b>[Enter]</b>.",
         "description": ""
     },
     "error_blueTotpNotYetInstalled": {
-        "message": "You didn't install Blue TOTP Service yet?",
+        "message": "You didn't install BlueTOTP Service yet?",
         "description": ""
     },
     "error_followThis": {
@@ -63,7 +63,7 @@
         "description": ""
     },
     "error_canNotUseBlueTotpWithThisPc": {
-        "message": "You can't use Blue TOTP with this PC.",
+        "message": "You can't use BlueTOTP with this PC.",
         "description": ""
     },
     "error_hint": {
@@ -83,7 +83,7 @@
         "description": ""
     },
     "error_blueTotpShouldWorkNow": {
-        "message": "Then you should be able to use Blue TOTP.",
+        "message": "Then you should be able to use BlueTOTP.",
         "description": ""
     },
     "error_anUnknownErrorOccurred": {
@@ -105,7 +105,7 @@
         "description": ""
     },
     "home_setup2faWithBlueTotpFor": {
-        "message": "Do you want to setup two factor authentication with Blue TOTP for",
+        "message": "Do you want to setup two factor authentication with BlueTOTP for",
         "description": ""
     },
     "home_visitAWebsiteToStartTheSetup": {
@@ -177,7 +177,7 @@
         "description": ""
     },
     "setup_webservice_No2faSupportCanNotUseBlueTotp": {
-        "message": "Then the webservice might not support the two factor authentication we need. So you can't use Blue TOTP on this webservice.",
+        "message": "Then the webservice might not support the two factor authentication we need. So you can't use BlueTOTP on this webservice.",
         "description": ""
     },
     "back": {
@@ -209,7 +209,7 @@
         "description": ""
     },
     "setup_profile_openBlueTotpAppOnPhone": {
-        "message": "Open the Blue TOTP app on your smartphone.",
+        "message": "Open the BlueTOTP app on your smartphone.",
         "description": ""
     },
     "setup_profile_touchScanButtonToScanQrCode": {
@@ -225,15 +225,15 @@
         "description": ""
     },
     "setup_finished_extRecognisesInputAutomatically": {
-        "message": "The Blue TOTP extension recognises this input field and fills in the 6 digit combination.",
+        "message": "The BlueTOTP extension recognises this input field and fills in the 6 digit combination.",
         "description": ""
     },
     "setup_finished_appAndExtensionMustBeConnected": {
-        "message": "Blue TOTP only works, when smartphone app and browser extension are connected via Bluetooth.",
+        "message": "BlueTOTP only works, when smartphone app and browser extension are connected via Bluetooth.",
         "description": ""
     },
     "setup_finished_hintKeepBluetoothActivated": {
-        "message": "Hint: keep Bluetooth always enabled on your smartphone and PC, for a better user experience.",
+        "message": "Hint: keep Bluetooth always enabled on your smartphone and PC for a better user experience.",
         "description": ""
     },
     "finished": {

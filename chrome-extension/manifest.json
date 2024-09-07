@@ -1,5 +1,5 @@
 {
-  "name": "Blue TOTP",
+  "name": "BlueTOTP",
   "description" : "Automatically requests time-based one-time passwords (TOTP) from your Smartphone via Bluetooth. It also checks if the visited URL is known by your Smartphone. Otherwise you will get warned that the website is a phishing website.",
   "version": "0.0.1",
   "permissions": [
